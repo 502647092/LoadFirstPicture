@@ -6,6 +6,7 @@ Form=Frm_Main.frm
 UserControl=..\VB用户控件\TzDownload.ctl
 Startup="Frm_Main"
 HelpFile=""
+ExeName32="首图导出工具.exe"
 Command32=""
 Name="导出商品首图"
 HelpContextID="0"
