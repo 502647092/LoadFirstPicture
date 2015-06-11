@@ -10,55 +10,51 @@ Begin VB.Form Frm_Main
    ScaleHeight     =   9390
    ScaleWidth      =   19035
    StartUpPosition =   3  '窗口缺省
-   Begin 导出商品首图.TzListBox UName 
-      Height          =   1170
-      Left            =   8835
-      TabIndex        =   28
-      Top             =   4440
-      Width           =   3795
-      _ExtentX        =   6694
-      _ExtentY        =   2064
+   Begin VB.CommandButton pic 
+      Caption         =   "图片"
+      Height          =   300
+      Left            =   11400
+      TabIndex        =   15
+      Top             =   90
+      Width           =   600
    End
-   Begin 导出商品首图.TzListBox SName 
-      Height          =   1335
-      Left            =   8835
-      TabIndex        =   27
-      Top             =   3135
-      Width           =   3810
-      _ExtentX        =   6720
-      _ExtentY        =   2355
+   Begin VB.CommandButton manager 
+      Caption         =   "商品"
+      Height          =   300
+      Left            =   10500
+      TabIndex        =   14
+      Top             =   90
+      Width           =   600
    End
-   Begin SHDocVwCtl.WebBrowser web 
-      Height          =   915
-      Index           =   1
-      Left            =   8580
-      TabIndex        =   8
-      Top             =   1335
-      Width           =   1155
-      ExtentX         =   2037
-      ExtentY         =   1614
-      ViewMode        =   0
-      Offline         =   0
-      Silent          =   0
-      RegisterAsBrowser=   1
-      RegisterAsDropTarget=   1
-      AutoArrange     =   0   'False
-      NoClientEdge    =   0   'False
-      AlignLeft       =   0   'False
-      NoWebView       =   0   'False
-      HideFileNames   =   0   'False
-      SingleClick     =   0   'False
-      SingleSelection =   0   'False
-      NoFolders       =   0   'False
-      Transparent     =   0   'False
-      ViewID          =   "{0057D0E0-3573-11CF-AE69-08002B2E1262}"
-      Location        =   "http:///"
+   Begin VB.CommandButton alibaba 
+      Caption         =   "1688"
+      Height          =   300
+      Left            =   9600
+      TabIndex        =   13
+      Top             =   90
+      Width           =   600
+   End
+   Begin VB.CommandButton oa 
+      Caption         =   "OA"
+      Height          =   300
+      Left            =   8700
+      TabIndex        =   12
+      Top             =   90
+      Width           =   600
+   End
+   Begin VB.CommandButton lookitem 
+      Caption         =   "查看商品"
+      Height          =   300
+      Left            =   12300
+      TabIndex        =   11
+      Top             =   90
+      Width           =   945
    End
    Begin SHDocVwCtl.WebBrowser web 
       Height          =   915
       Index           =   2
       Left            =   9750
-      TabIndex        =   26
+      TabIndex        =   10
       Top             =   1350
       Width           =   1155
       ExtentX         =   2037
@@ -80,143 +76,78 @@ Begin VB.Form Frm_Main
       ViewID          =   "{0057D0E0-3573-11CF-AE69-08002B2E1262}"
       Location        =   "http:///"
    End
-   Begin VB.CommandButton oa 
-      Caption         =   "OA"
-      Height          =   300
-      Left            =   16425
-      TabIndex        =   23
-      Top             =   60
-      Width           =   600
-   End
-   Begin VB.CommandButton alibaba 
-      Caption         =   "1688"
-      Height          =   300
-      Left            =   16425
-      TabIndex        =   22
-      Top             =   360
-      Width           =   600
-   End
-   Begin VB.CommandButton manager 
-      Caption         =   "商品"
-      Height          =   300
-      Left            =   16425
-      TabIndex        =   21
-      Top             =   660
-      Width           =   600
-   End
-   Begin VB.CommandButton pic 
-      Caption         =   "图片"
-      Height          =   300
-      Left            =   16425
-      TabIndex        =   20
-      Top             =   960
-      Width           =   600
+   Begin SHDocVwCtl.WebBrowser web 
+      Height          =   915
+      Index           =   1
+      Left            =   8580
+      TabIndex        =   2
+      Top             =   1335
+      Width           =   1155
+      ExtentX         =   2037
+      ExtentY         =   1614
+      ViewMode        =   0
+      Offline         =   0
+      Silent          =   0
+      RegisterAsBrowser=   1
+      RegisterAsDropTarget=   1
+      AutoArrange     =   0   'False
+      NoClientEdge    =   0   'False
+      AlignLeft       =   0   'False
+      NoWebView       =   0   'False
+      HideFileNames   =   0   'False
+      SingleClick     =   0   'False
+      SingleSelection =   0   'False
+      NoFolders       =   0   'False
+      Transparent     =   0   'False
+      ViewID          =   "{0057D0E0-3573-11CF-AE69-08002B2E1262}"
+      Location        =   "http:///"
    End
    Begin VB.ListBox List1 
       Height          =   7620
       Left            =   16830
-      TabIndex        =   18
+      TabIndex        =   8
       Top             =   1695
       Width           =   1035
    End
    Begin VB.ListBox List2 
       Height          =   780
       Left            =   45
-      TabIndex        =   17
+      TabIndex        =   7
       Top             =   9315
       Width           =   17145
-   End
-   Begin VB.TextBox itempicurl 
-      Height          =   300
-      Index           =   2
-      Left            =   12810
-      TabIndex        =   14
-      Top             =   960
-      Width           =   3600
-   End
-   Begin VB.TextBox itemname 
-      Height          =   300
-      Index           =   2
-      Left            =   9570
-      TabIndex        =   13
-      Top             =   960
-      Width           =   2370
    End
    Begin VB.TextBox urlT 
       Height          =   270
       Index           =   2
       Left            =   8700
-      TabIndex        =   12
+      TabIndex        =   6
       Text            =   "2"
-      Top             =   420
+      Top             =   480
       Width           =   7710
    End
    Begin VB.TextBox urlT 
       Height          =   270
       Index           =   1
       Left            =   945
-      TabIndex        =   10
+      TabIndex        =   4
       Text            =   "1"
-      Top             =   420
+      Top             =   480
       Width           =   7710
    End
    Begin VB.TextBox urlT 
       Height          =   270
       Index           =   0
       Left            =   945
-      TabIndex        =   9
+      TabIndex        =   3
       Text            =   "Text1"
       Top             =   105
       Width           =   7710
-   End
-   Begin 导出商品首图.TzDownload dl 
-      Height          =   195
-      Index           =   1
-      Left            =   930
-      Top             =   713
-      Width           =   7710
-      _ExtentX        =   13600
-      _ExtentY        =   344
-      ForeColor       =   33023
-   End
-   Begin VB.TextBox folder 
-      Height          =   300
-      Left            =   9735
-      TabIndex        =   6
-      Top             =   90
-      Width           =   6675
-   End
-   Begin VB.TextBox itemname 
-      Height          =   300
-      Index           =   1
-      Left            =   1815
-      TabIndex        =   4
-      Top             =   960
-      Width           =   2370
-   End
-   Begin VB.TextBox itempicurl 
-      Height          =   300
-      Index           =   1
-      Left            =   5070
-      TabIndex        =   2
-      Top             =   960
-      Width           =   3600
-   End
-   Begin 导出商品首图.TzDownload dl 
-      Height          =   195
-      Index           =   2
-      Left            =   8700
-      Top             =   713
-      Width           =   7710
-      _ExtentX        =   13600
-      _ExtentY        =   344
-      ForeColor       =   33023
    End
    Begin SHDocVwCtl.WebBrowser web 
       Height          =   7665
       Index           =   0
       Left            =   45
-      TabIndex        =   3
+      TabIndex        =   1
       Top             =   1335
       Width           =   8535
       ExtentX         =   15055
@@ -238,85 +169,22 @@ Begin VB.Form Frm_Main
       ViewID          =   "{0057D0E0-3573-11CF-AE69-08002B2E1262}"
       Location        =   "http:///"
    End
-   Begin VB.Label Label9 
-      AutoSize        =   -1  'True
-      Caption         =   "首图信息:"
-      Height          =   180
-      Left            =   120
-      TabIndex        =   25
-      Top             =   1020
-      Width           =   810
-   End
-   Begin VB.Label Label8 
-      AutoSize        =   -1  'True
-      Caption         =   "下载状态:"
-      Height          =   180
-      Left            =   120
-      TabIndex        =   24
-      Top             =   720
-      Width           =   810
-   End
    Begin VB.Label pages 
       AutoSize        =   -1  'True
       Caption         =   "页数"
       Height          =   180
-      Left            =   17310
-      TabIndex        =   19
-      Top             =   885
+      Left            =   13350
+      TabIndex        =   9
+      Top             =   150
       Width           =   360
-   End
-   Begin VB.Label Label7 
-      AutoSize        =   -1  'True
-      Caption         =   "首图链接:"
-      Height          =   180
-      Left            =   11985
-      TabIndex        =   16
-      Top             =   1020
-      Width           =   810
-   End
-   Begin VB.Label Label6 
-      AutoSize        =   -1  'True
-      Caption         =   "商品名称:"
-      Height          =   180
-      Left            =   8760
-      TabIndex        =   15
-      Top             =   1020
-      Width           =   810
    End
    Begin VB.Label Label5 
       AutoSize        =   -1  'True
       Caption         =   "网页链接:"
       Height          =   180
       Left            =   120
-      TabIndex        =   11
-      Top             =   465
-      Width           =   810
-   End
-   Begin VB.Label Label4 
-      AutoSize        =   -1  'True
-      Caption         =   "文件夹名称:"
-      Height          =   180
-      Left            =   8700
-      TabIndex        =   7
-      Top             =   150
-      Width           =   990
-   End
-   Begin VB.Label Label2 
-      AutoSize        =   -1  'True
-      Caption         =   "商品名称:"
-      Height          =   180
-      Left            =   990
       TabIndex        =   5
-      Top             =   1020
-      Width           =   810
-   End
-   Begin VB.Label Label3 
-      AutoSize        =   -1  'True
-      Caption         =   "首图链接:"
-      Height          =   180
-      Left            =   4245
-      TabIndex        =   1
-      Top             =   1020
+      Top             =   525
       Width           =   810
    End
    Begin VB.Label Label1 
@@ -349,7 +217,7 @@ Private Sub Form_Resize()
     On Error Resume Next
 
     Dim lefthg
-    web(0).Top = 1300
+    web(0).Top = 900
     lefthg = Me.Height - web(0).Top
     
     web(0).Width = Me.Width - 50
@@ -371,18 +239,7 @@ Private Sub Form_Resize()
 '    web(2).Top = web(0).Top + lefthg / 2
 '    web(2).Height = lefthg / 2
 '    web(2).Left = 10
-    
-    SName.Width = web(0).Width / 2
-    SName.Top = web(0).Top + lefthg / 2
-    SName.Height = lefthg / 3 * 2
-    SName.Left = 10
-    
-    UName.Width = web(0).Width / 2
-    UName.Top = web(0).Top + lefthg / 2
-    UName.Height = lefthg / 3 * 2
-    UName.Left = 10 + SName.Width
-    
-    
+
     List1.Left = Me.Width - List1.Width - 350
     List1.Height = lefthg - 350
     List1.Top = web(0).Top
@@ -392,38 +249,43 @@ Private Sub getfp(webb As WebBrowser)
     On Error Resume Next
     Dim i, J, vDoc
     Dim ix As Long
+    Dim itemname, itemurl
     ix = webb.index
     Set vDoc = webb.Document
-    itemname(ix) = resetfilename(vDoc.getelementsbytagname("input")("subject").Value)
-    ERR.Clear
-    itempicurl(ix) = vDoc.getelementsbytagname("input")("pictureUrl").Value
+    itemname = resetfilename(vDoc.getelementsbytagname("input")("subject").Value)
+    ERR.clear
+    itemurl = vDoc.getelementsbytagname("input")("pictureUrl").Value
     If ERR <> 0 Then
-        itempicurl(ix) = vDoc.getelementsbytagname("input")("pictureUrl")(0).Value
+        itempicurl = vDoc.getelementsbytagname("input")("pictureUrl")(0).Value
     End If
     
-    If folder = "" Then folder = InputBox("请输入 日期-首图-公司名称-阿里账号-提单人名称!", , Format(Now, "m.d") & "-首图-公司名称-阿里账号-提单人名称")
-    If folder = "" Then folder = Format(Now, "m.d") & "-首图-公司名称-阿里账号-提单人名称"
-    If Len(itemname(ix)) = 0 And Len(itempicurl(ix)) = 0 Then Exit Sub
-    For i = dl.LBound To dl.UBound
-        If dl(i).IsFree Then dl(i).FileDownload itempicurl(ix), App.Path & "\" & folder.Text & "\" & itemname(ix).Text & ".jpg": dl(i).Tag = False: Exit For
-    Next
-    itemname(ix) = ""
-    itempicurl(ix) = ""
+    If InStr(1, itemurl, "http") <> 0 And InStr(1, itemurl, "jpg") <> 0 And InStr(1, itemurl, ".com//") = 0 Then
+        If Frm_Download.UName.AddItemNotSame(itemurl) Then
+            If Not (Frm_Download.SName.AddItemNotSame(resetfilename(Trim(itemname) & ".jpg"))) Then
+                Frm_Download.SName.AddItemNotSame resetfilename((Trim(itemname) & i) & ".jpg")
+            End If
+        End If
+    End If
+
 End Sub
 
 Private Function resetfilename(ByVal name As String) As String
-    name = Clear(name, "/")
-    name = Clear(name, "\")
-    name = Clear(name, "*")
-    name = Clear(name, "?")
-    name = Clear(name, "<")
-    name = Clear(name, ">")
+    name = clear(name, "/")
+    name = clear(name, "\")
+    name = clear(name, "*")
+    name = clear(name, "?")
+    name = clear(name, "<")
+    name = clear(name, ">")
     resetfilename = name
 End Function
 
-Private Function Clear(name As String, p As String) As String
-    Clear = Replace(name, p, "")
+Private Function clear(name As String, P As String) As String
+    clear = Replace(name, P, "")
 End Function
+
+Private Sub Form_Unload(Cancel As Integer)
+    Unload Frm_Download
+End Sub
 
 Private Sub Label1_Click()
     web(0).Visible = Not web(0).Visible
@@ -449,7 +311,7 @@ Private Sub Label2_Click()
                UCase(vTag_1.TagName) = "A" And _
                UCase(vTag1.TagName) = "DIV" And _
                UCase(vTag2.TagName) = "DIV" Then
-                If vTag.class = "next" Then vTag.Click
+                If vTag.Class = "next" Then vTag.Click
             End If
         End Select
     Next
@@ -462,6 +324,10 @@ Private Sub Label5_Click()
         web(i).Stop
         web(i).Tag = True
     Next
+End Sub
+
+Private Sub lookitem_Click()
+    Frm_Download.Show
 End Sub
 
 Private Sub manager_Click()
@@ -508,15 +374,17 @@ End Sub
 'End Sub
 
 Private Sub web_DownloadComplete(index As Integer)
-    Dim target, title, class
+    Dim target, Title, Class
+    Dim itemurl As String
+    Dim itemname As String
     web(index).Silent = True
     web(index).Tag = True
     urlT(index).Enabled = True
     urlT(index).ForeColor = vbBlue
     Me.Caption = "Load Complete"
     showweb (index)
-    List1.Clear
-    List2.Clear
+    List1.clear
+    List2.clear
     Dim vDoc, vTag_2, vTag_1, vTag, vTag1, vTag2, vTXT
     Dim i As Integer
     Set vDoc = web(index).Document
@@ -532,59 +400,84 @@ Private Sub web_DownloadComplete(index As Integer)
         Select Case UCase(vDoc.All(i).TagName)
         Case "TD"
         Case "A"
-        Dim st
-        Dim en
+        '商品列表批量获取信息
+            Dim st As Long
+            Dim en As Long
             If UCase(vTag_2.TagName) = "INPUT" And _
                UCase(vTag_1.TagName) = "TD" And _
                UCase(vTag1.TagName) = "IMG" And _
                UCase(vTag2.TagName) = "TD" Then
-                If vTag.target = "_blank" Then
-                    If SName.AddItemNotSame(vTag.title) Then
-                        st = InStr(1, vTag.innerhtml, "data-lazyload-src=""") + Len("data-lazyload-src=""")
-                        en = InStr(st, vTag.innerhtml, """")
-                        UName.AddItemNotSame Replace(Mid(vTag.innerhtml, st, en - st), ".64x64", "")
+                st = InStr(1, vTag.innerhtml, "data-lazyload-src=""") + Len("data-lazyload-src=""")    'data-lazyload-src="http://
+                st = InStr(st + 1, vTag.innerhtml, "/") + Len("/")
+                en = InStr(st, vTag.innerhtml, "jpg") + 3
+                itemurl = Mid(vTag.innerhtml, st, en - st)
+                itemurl = urlreset(itemurl)
+                'Debug.Print itemurl
+                If InStr(1, itemurl, "http") <> 0 And InStr(1, itemurl, "jpg") <> 0 And InStr(1, itemurl, ".com//") = 0 Then
+                    If Frm_Download.UName.AddItemNotSame(itemurl) Then
+                        If Not (Frm_Download.SName.AddItemNotSame(resetfilename(Trim(vTag.Title) & ".jpg"))) Then
+                            Frm_Download.SName.AddItemNotSame resetfilename((Trim(vTag.Title) & i) & ".jpg")
+                        End If
                     End If
                 End If
             End If
-'            If UCase(vTag_2.TagName) = "DIV" And _
-'               UCase(vTag_1.TagName) = "DIV" And _
-'               UCase(vTag1.TagName) = "SPAN" And _
-'               UCase(vTag2.TagName) = "UL" Then
-'                If vTag.class = "btn-edit" And vTag.target = "_blank" And vTag.title = "修改" Then List2.AddItem vTag.href
-'            End If
-        Case "B"
-            'A SPAN　B  B B
-            
-'            If UCase(vTag_2.TagName) = "A" And _
-'               UCase(vTag_1.TagName) = "SPAN" And _
-'               UCase(vTag1.TagName) = "B" And _
-'               UCase(vTag2.TagName) = "B" Then
-'                Me.Caption = "当前的任务有" & vTag.innerhtml & "个!"
-'            End If
+        Case "META"
+        '商品展示部分直接获取首图信息
+            If vTag.property = "og:image" And vTag1.property = "og:title" Then
+                itemurl = urlreset(vTag.content)
+                itemname = vTag1.content
+                If InStr(1, itemurl, "http") <> 0 And InStr(1, itemurl, "jpg") <> 0 And InStr(1, itemurl, ".com//") = 0 Then
+                    If Frm_Download.UName.AddItemNotSame(itemurl) Then
+                        If Not (Frm_Download.SName.AddItemNotSame(resetfilename(Trim(itemname) & ".jpg"))) Then
+                            Frm_Download.SName.AddItemNotSame resetfilename((Trim(itemname) & i) & ".jpg")
+                        End If
+                    End If
+                End If
+            End If
 
-            'http://192.168.0.8:83/app1/TaskLadingCn/List.aspx?k=&RearchType=0&UId=0&KfId=4986&MgId=0&mgbm=0&bumen=0&followup=&FState=0&tdtype=-1&FSpeed=0&FMgSpeed=0&FKfSpeed=1&attr=0&AttrBus=0&selDate=0&strDate=&endDate=
-            'TD A  IMG  TD P
-        Case "IMG"
-            If UCase(vTag_2.TagName) = "TD" And _
-               UCase(vTag_1.TagName) = "A" And _
-               UCase(vTag1.TagName) = "TD" And _
-               UCase(vTag2.TagName) = "p" Then
-                'List2.AddItem vTag_1.innerhtml
-                Debug.Print vTag_1.innerhtml
-                Debug.Print vTag.src
-            End If
-        Case "EM"
-            If UCase(vTag_2.TagName) = "A" And _
-               UCase(vTag_1.TagName) = "LI" And _
-               UCase(vTag1.TagName) = "INPUT" And _
-               UCase(vTag2.TagName) = "LI" Then
-                pages = vTag.innerhtml
-            End If
+            '               <meta property="og:image" content="http://i00.c.aliimg.com/img/ibank/2015/897/991/2210199798_196219354.310x310.jpg"/>
+            '<meta property="og:title" content="12支铅笔塑料盒 20*22CM环保吸塑包装 多规格pvc吸塑泡壳加工"/>
+
+            '            '            If UCase(vTag_2.TagName) = "DIV" And _
+                         '                         '               UCase(vTag_1.TagName) = "DIV" And _
+                         '                         '               UCase(vTag1.TagName) = "SPAN" And _
+                         '                         '               UCase(vTag2.TagName) = "UL" Then
+            '            '                If vTag.class = "btn-edit" And vTag.target = "_blank" And vTag.title = "修改" Then List2.AddItem vTag.href
+            '            '            End If
+            '        Case "B"
+            '            'A SPAN　B  B B
+            '
+            '            '            If UCase(vTag_2.TagName) = "A" And _
+                         '                         '               UCase(vTag_1.TagName) = "SPAN" And _
+                         '                         '               UCase(vTag1.TagName) = "B" And _
+                         '                         '               UCase(vTag2.TagName) = "B" Then
+            '            '                Me.Caption = "当前的任务有" & vTag.innerhtml & "个!"
+            '            '            End If
+            '
+            '            'http://192.168.0.8:83/app1/TaskLadingCn/List.aspx?k=&RearchType=0&UId=0&KfId=4986&MgId=0&mgbm=0&bumen=0&followup=&FState=0&tdtype=-1&FSpeed=0&FMgSpeed=0&FKfSpeed=1&attr=0&AttrBus=0&selDate=0&strDate=&endDate=
+            '            'TD A  IMG  TD P
+            '        Case "IMG"
+            '            If UCase(vTag_2.TagName) = "TD" And _
+                         '               UCase(vTag_1.TagName) = "A" And _
+                         '               UCase(vTag1.TagName) = "TD" And _
+                         '               UCase(vTag2.TagName) = "p" Then
+            '                'List2.AddItem vTag_1.innerhtml
+            '                Debug.Print vTag_1.innerhtml
+            '                Debug.Print vTag.src
+            '            End If
+            '        Case "EM"
+            '            If UCase(vTag_2.TagName) = "A" And _
+                         '               UCase(vTag_1.TagName) = "LI" And _
+                         '               UCase(vTag1.TagName) = "INPUT" And _
+                         '               UCase(vTag2.TagName) = "LI" Then
+            '                pages = vTag.innerhtml
+            '            End If
         End Select
     Next
 End Sub
 
 Private Sub web_NewWindow2(index As Integer, ppDisp As Object, Cancel As Boolean)
+    On Error Resume Next
     Dim i
     For i = 1 To web.UBound
         If web(i).Tag Then Set ppDisp = web(i).Object: showweb (i): pages = "已加载...": Exit Sub
@@ -592,6 +485,20 @@ Private Sub web_NewWindow2(index As Integer, ppDisp As Object, Cancel As Boolean
     pages = "未加载..."
     Cancel = True
 End Sub
+
+Public Function urlreset(ByVal url As String) As String
+Dim st, en
+    'Debug.Print url
+    st = InStr(1, url, "http://") + Len("http://")
+    st = InStr(st + 1, url, "/") + Len("/")
+    en = InStr(st, url, "jpg") + 3
+    url = Mid(url, st, en - st)
+    url = Replace(url, ".310x310", "")
+    url = Replace(url, ".64x64", "")
+    url = "http://i01.c.aliimg.com/" & url
+    urlreset = url
+    'Debug.Print url
+End Function
 
 Private Sub showweb(index As Long)
     Dim i As Long
