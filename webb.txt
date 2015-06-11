@@ -1,4 +1,4 @@
-1.获取WebBrowser加载网页的内容
+﻿1.获取WebBrowser加载网页的内容
 
 WebBrowser1.Document.getElementById("kw").Value = "VB编程"
 
@@ -136,6 +136,7 @@ PostData As Variant, _
 Headers As Variant, _ 
 
 Cancel As Boolean) 
+
 
 If TypeName(pDisp) = "WebBrowser" And Headers = "" Then 
 
@@ -316,323 +317,64 @@ LPUNKNOWN lpUnknownDC = NULL;
 lpUnknown = m_webBrowser.GetControlUnknown(); 
 
 
-   
-
-
-
-
-
-
 ASSERT(lpUnknown); 
-
-
-  
-
-
-   
-
-
-
-
 
 
 if (lpUnknown) 
 
 
-   
-
-
-
-
-
-
 { 
-
-
-      
-
-
-
-
 
 
 // Get the pointer to the IUnknown interface of the WebBrowser  
 
-
-      
-
-
-
-
-
-
 // control being hosted. The pointer to the IUnknown returned from  
-
-
-      
-
-
-
-
-
 
 // GetControlUnknown is not the pointer to the IUnknown of the  
 
-
-      
-
-
-
-
-
-
 // WebBrowser control. It's actually a pointer to the IOleObject. 
-
-
-      
-
-
-
-
-
 
 //  
 
-
-      
-
-
-
-
-
-
 hr = lpUnknown->QueryInterface(IID_IUnknown, 
-
-
-                                     
-
-
-
-
-
 
 (LPVOID*)&lpUnknownWB); 
 
-
-  
-
-
-      
-
-
-
-
-
-
 ASSERT(SUCCEEDED(hr)); 
-
-
-  
-
-
-      
-
-
-
-
-
 
 if (FAILED(hr)) 
 
-
-         
-
-
-
-
-
-
 return; 
-
-
-  
-
-
-      
-
-
-
-
-
 
 // Get the pointer to the IUnknown of the object that fired this  
 
-
-      
-
-
-
-
-
-
 // event. 
 
-
-      
-
-
-
-
-
-
 // 
-
-
-    
-
-
-
-
-
-
-  
-
-
-
-
-
 
 hr = lpDispatch->QueryInterface(IID_IUnknown,  
 
-
-                                      
-
-
-
-
-
-
 (LPVOID*)&lpUnknownDC); 
-
-
-  
-
-
-      
-
-
-
-
-
 
 ASSERT(SUCCEEDED(hr)); 
 
-
-  
-
-
-      
-
-
-
-
-
-
 if (SUCCEEDED(hr) && lpUnknownWB == lpUnknownDC) 
-
-
-      
-
-
-
-
-
 
 { 
 
-
-         
-
-
-
-
-
-
 // The document has finished loading. 
-
-
-    
-
-
-
-
-
-
-     
-
-
-
-
-
 
 // 
 
-
-         
-
-
-
-
-
-
 MessageBox("The document has finished loading."); 
-
-
-      
-
-
-
-
-
 
 } 
 
-
-  
-
-
-      
-
-
-
-
-
-
 if (lpUnknownWB) 
-
-
-         
-
-
-
-
-
 
 lpUnknownWB->Release(); 
 
-
-  
-
-
-      
-
-
-
-
-
-
 if (lpUnknownDC)
-
 lpUnknownDC->Release();
 }
 }
@@ -798,10 +540,6 @@ m_dlgNewWB->Create(IDD_MYDLG_DIALOG);
 
 记住当你完成打开的新对话框后删除（delete） m_dlgNewWB . 且不要在CMyDlg::OnInitDialog 方法中导航, 因为这样代码将不会工作.
 
-                 
-
- 
-
 ProgressChange
 ProgressChange 事件通告你的应用程序下在操作状态已经更新. ProgressChange 有两个参数:
 
@@ -812,9 +550,5 @@ ProgressMax. 最大进度值
  
 事件发生序列
 下图展示了IE的事件发生序列.但这仅仅为不包含帧的普通网页浏览. (没有包含诸如 ProgressChange , CommandStateChange , OnToolBar , 等等事件.)不是所有事件都会被激发. 但是 BeforeNavigate2 和DocumentComplete 每次浏览都会被激发.
-
- 
-
-    
 
 Figure 7-5. The sequence of events fired by the WebBrowser control during a typical navigation.
