@@ -1,0 +1,820 @@
+1.获取WebBrowser加载网页的内容
+
+WebBrowser1.Document.getElementById("kw").Value = "VB编程"
+
+WebBrowser1.Document.getElementById("f").submit '提交表单
+
+2.往WebBrowser控件写入内容
+
+
+WebBrowser1.Document.write str
+
+
+
+3. 操作页面元素
+
+
+for(i=0;i<document.getElementsByTagName.length;i++){
+
+    document.getElementsByTagName("input")[i].style.background="#CCCCCC";
+
+}
+
+2.webbrowser控件的DocumentComplete和DownloadComplete的区别
+
+文档完全下载后，一个 DownloadComplete 事件就被引发。这并不一定表明可以通过对象模型安全地访问文档内容了。DocumentComplete 事件才表明所有的工作都已完成并且文档已经就绪。 
+
+DocumentComplete url请求的页面完成；当整个文档完成时激发，刷新页面不激发 
+DownloadComplete url中请求的下载完成；当某项下载操作已经完成后激发，刷新也可激发此事件 
+DownloadComplete 事件比 DocumentComplete 事件先触发
+
+ 
+
+一个Document可能包括多个Download，例如Link的CSS、脚本和图片。多个框架的DownloadComplete     和DocumentComplete的触发并无指定的先后次序；但是可以根据DocumentComplete的参数判断是哪一个浏览器对象触发了事件（框架也是浏览器对象）
+
+ 
+
+以下转自：http://blog.csdn.net/shanhe/archive/2005/08/11/451681.aspx ，更多内容浏览该页面
+
+
+
+
+
+如你所知， Internet Explorer像其他COM对象一样激发事件—通过连接点.但实际上Internet Explorer如何激发事件呢?每次 Internet Explorer需要向客户提供关于当前活动状态的信息, Internet Explorer 激发通过DWebBrowserEvents2 连接点激发一个事件. (之前到版本 4, Internet Explorer 通过 DWebBrowserEvents 接口激发事件.但到了版本4.x 和5, Internet Explorer 通过 DWebBrowserEvents2 连接点.)
+
+注意
+如何领会到 Internet Explorer 加法那些事件 ? 最佳途径是 MSDN Online Web Workshop. 另外采用 OLE-COM Object Viewer
+不像WebBrowser 控件 和 Internet Explorer的其他接口,是剑接口没有继承体系. DWebBrowserEvents 接口严格应用于Internet Explorer 3. 如果你正宿主WebBrowser 控件或者自动化Internet Explorer 5, 你可以通过此接口接收事件—但是不可挂接. DWebBrowserEvents2 接口包含的方法是为Internet Explorer 5定制的.用 DWebBrowserEvents2 替代DWebBrowserEvents ，你将有更多的控制能力. 所以不要忘记接口的最后面的2.
+
+尽管DWebBrowserEvents2 是一个事件接口, 它其实就是像IWebBrowser2   一样的另外 COM 接口,所以它可以包含方法. (D 开头的命名是表示这是派遣接口.一个派遣接口是一个IDispatch 接口.但不同于普通接口, 派遣接口没有vtable.) 就像一个接口一样,派遣接口只不过提供一些函数的定义—他们并不真实实现.事件的实现由客户提供.举例来说，为了让WebBrowser 激发一个事件, 在DWebBrowserEvents2 接口中适当定义一些方法.这些方法由客户实现.但WebBrowser不直接调用这些方法.换句话讲, WebBrowser 并不调用DocumentComplete 方法.因为 DWebBrowserEvents2 是派遣接口, WebBrowser 通过IDispatch::Invoke 调用客户的实现. 早期, 当WebBrowser 调用客户的Invoke 实现, WebBrowser 传递事件被激发的DISPID.
+
+注意
+某些工具如 Visual Basic, MFC, 和 ATL 提供 Invoke 实现
+表7-6 列出 WebBrowser 事件. (这些是WebBrowser 控件和Internet Explorer供有的事件,尽管有些事件仅仅用于自动化Internet Explorer).
+
+注意
+尽管有些方法为不包含 2 . 尽管 DWebBrowserEvents2 并非继承自 WebBrowserEvents , DWebBrowserEvents2 还是 匹配 DWebBrowserEvents 中被更改的，以免混淆。
+注意表 7-6 重的参数有些值同样有 VARIANT_ TRUE 或 VARIANT_FALSE . 如果你使用Visual C++,确信分派使用这些值不要使用 TRUE 或 FALSE . 如果你使用Visual Basic, 它会自动帮助你转换，你可以比较True和False.
+
+现在来仔细看看这些事件
+
+Table 7-6 WebBrowser 事件
+
+私有事件
+描述
+BeforeNavigate2
+在导航之前发生 . ( 该事件并不在不刷新页面的时候发生 )
+CommandStateChange
+当命令状态改变时发生 . 该事件告诉你何时使能或者禁止 Back 以及 Forward 菜单像或者按钮 .
+DocumentComplete
+当整个文档完全完成装载时发生 . 如果你刷新页面 , 此事件并不激发 .
+DownloadBegin
+当一个下载项目开始时候发生 ，此事件也在你刷新（ IWebBrowser2::Refresh. ）时发生
+DownloadComplete
+党整个下载项目完成是发生该事件也发生在完成刷新页面 .
+NavigateComplete2
+当整个导航完成 . 该事件对应于 BeforeNavigate2 .
+NewWindow2
+在一个新的窗口被创建以显示 Web 页或者其他资源的时候发生。譬如你在页面中以新建窗口的方式打开一个连接
+OnFullScreen
+当 FullScreen 属性被改变时候发生 . 此事件携带一个 VARIANT_ BOOL 类型的 输入参数指示 Internet Explorer 是否处于全屏（ full-screen ） 模式 (VARIANT_TRUE ) 或者处于普通模式 (VARIANT_FALSE ).
+OnMenuBar
+菜单条 MenuBar 属性被改变的时候发生 . 一个 VARIANT_ BOOL 类型的 输入参数指   Internet Explorer 的菜单条属性是可见 (VARIANT_TRUE ) 或者隐藏 (VARIANT_ FALSE ).
+OnQuit
+当 Internet Explorer 正在退出时发生 . 该事件当用户关闭浏览器或者调用 Quit 方法 .
+OnStatusBar
+当 StatusBar 属性被改变的时候发生。事件携带 VARIANT_ BOOL 类型的输入参数 指示 Internet Explorer 的状态条是否可见 (VARIANT_TRUE ) 或者隐藏 (VARIANT_FALSE ).
+OnTheaterMode
+当 TheaterMode 属性被改变时发生 . 事件携带 VARIANT_ BOOL 类型的输入参数 指示 Internet Explorer 的状态条是否可见 (VARIANT_TRUE ) 或者隐藏 (VARIANT_FALSE ).
+OnToolBar
+当 ToolBar 属性被改变时发生 . 事件携带 VARIANT_ BOOL 类型的输入参数 指示 Internet Explorer 的状态条是否可见 (VARIANT_TRUE ) 或者隐藏 (VARIANT_FALSE ).
+OnVisible
+当 WebBrowser 将被显示或者隐藏时发生。 . 事件携带 VARIANT_ BOOL 类型的输入参数 指示 Internet Explorer 的状态条是否可见 (VARIANT_TRUE ) 或者隐藏 (VARIANT_FALSE ).
+ProgressChange
+当下载进度被更新时候发生
+PropertyChange
+当属性改变时候发生。典型的 , 当 PutProperty 方法被调用时
+StatusTextChange
+Internet Explorer 和 WebBrowser 控件改变状态条时候发生。即使 webbrowser 控件没有状态条。 StatusTextChange 给客户一个改变状态条的机会
+TitleChange
+. 当文档对象的 title 可用或者改变的时候发生
+BeforeNavigate2
+BeforeNavigate2 就像字面上所说. 当Internet Explorer 导航到一个WEB页是激发; 因此, 当用户输入一个 URL, 点击 Back 或者 Forward 按钮， 或者处理一个导航时都会发生. BeforeNavigate2   也在WebBrowser 控件导航类方法调用时发生, 例如 Navigate , Navigate2 , GoHome , 或者 GoSearch . 也许, 该事件不会在你刷新页面时发生. 如果页面上有帧, BeforeNavigate2 将像顶级窗口一样被激发 . BeforeNavigate2 由7个输入参数, 见7-7.
+
+Table 7-7 Input Parameters of the BeforeNavigate2 Event
+
+Parameter
+Description
+pDisp
+将发生导航的顶级窗口或者帧的 Idispatch 接口的地址
+URL
+将导航至的 URL
+Flags
+保留
+TargetFrameName
+显示资源的窗口或者帧的名字字符串，或者为 NULL （如果没有命名）
+PostData
+HTTP POST 传输的数据地址
+Headers
+增加的将要发给服务器的 HTTP 头 . 一般 HTTP 头指定其它的服务器要求。传送给服务器的数据类型、状态马等
+Cancel
+cancel 标志的地址 . 设置为 TRUE 可取消导航
+注意打所属参数匹配于Navigate 或者 Navigate2 的调用参数.如果 BeforeNavigate2 由一个或者多个导航类调用激发,这些导航类的方法参数 传递到BeforeNavigate2 方法.
+
+在事件的句柄函数中, 你可以使用Cancel 参数取消导航, 或者你可以是用pDisp 参数修改导航目的.设置Cancel 参数为 VARIANT_TRUE 可以取消导航，如果你想，你可以通过pDisp 修改参数导航信息且导航到另外的位置.举例来说，如果我们向停止当前导航, 增加一些头信息,且导航到原先的URL.在Visual Basic, 我们可以如下代码实现:
+
+Private Sub WebBrowser1_BeforeNavigate2(ByVal pDisp As Object, _
+
+URL As Variant, _ 
+
+Flags As Variant, _ 
+
+TargetFrameName As Variant, _ 
+
+PostData As Variant, _ 
+
+Headers As Variant, _ 
+
+Cancel As Boolean) 
+
+If TypeName(pDisp) = "WebBrowser" And Headers = "" Then 
+
+pDisp.Stop 
+
+pDisp.Navigate URL, Flags, TargetFrameName, PostData, _ 
+
+Headers + "MyHeaders" 
+
+Cancel = True 
+
+End If 
+
+End Sub
+
+我们需要注意以上代码的几个重点.
+
+首先你必须检查pDisp 的类型使之确定为WebBrowser . 当页面包含帧, pDisp 可能不是 WebBrowser 对象由此一些导航会导致错误.
+
+其次你必须检查确信Headers 参数是空字符串以避免无限循环.记住BeforeNavigate2 每一次导航都会发生.因此如果你在BeforeNavigate2 事件处理中调用Navigate , 另外一次 BeforeNavigate2 将被激活. 在前面的代码中, 仅仅在Headers 参数为空才调用Navigate 避免了无限循环. 如果Headers 参数是空, Navigate 将携带非空的 Headers 参数. 下一次BeforeNavigate2 北激活, Headers 将不为空; 此时，我们千万不可再次Navigate a,从而导致一个无限循环.
+
+第三点你必须调用pDisp 的Stop 方法.如果你没做到这点，"about:NavigationCanceled" Web 页将会载你首次取消掉导航时被显示.
+
+CommandStateChange
+CommandStateChange 是当Internet Explorer 想通知一个应用程序WebBrowser 命令状态已经改变时激发.当检测到Forward和Back 菜单项和按钮禁止或者使能时激发此事件.
+
+CommandStateChange 事件有2个参数, Command 和 Enable。 Command 输入参数将要改变状态的按钮的表示符，可以取值—CSC_NAVIGATEFORWARD 和 CSC_NAVIGATEBACK分别表示是 Forward按钮项和Back项,每次导航发生, CommandStateChange 事件发生并告诉你Forward 或者 Back 菜单项以及按钮将使能或禁止. 举例来说, 如果没有Web页在当前导航后发生, Command 的值应该为 CSC_NAVIGATEFORWARD , 并且Enable 参数将等于VARIANT_FALSE .
+
+第二个参数, Enable ,如果命令可用（使能） 则为VARIANT_TRUE，如果 禁止则值为VARIANT_FALSE .
+
+为说明问题，我们看看代码。一下代码为定义事件接收的宏声明：
+
+// Event sink map declaration for WebBrowser 
+
+// control events. This declaration goes in the
+
+// header file for CMfcWebHostView _ MfcWebHostView.h.
+
+//
+CLARE_EVENTSINK_MAP()
+// Initialize the event sink map and handle the 
+// CommandStateChange event.
+BEGIN_EVENTSINK_MAP(CMfcWebHostView, CView)
+
+ON_EVENT(CMFCIEEvtSpyDlg, IDC_WEBBROWSER, DISPID_COMMANDSTATECHANGE, 
+
+OnCommandStateChange, VTS_I4 VTS_BOOL) 
+
+END_EVENTSINK_MAP()
+
+重要的一点是要通过WebBrowser控件的Create 方法来创建. ON_EVENT的第二个参数为你宿主的WebBrowser控件的IID.之前的例子中是NULL . 你必须为webbrowser控件声明一个ID 且用此 ID 创建实例.如果不这么做，事件将不会正确工作.
+
+你可以在工程的任何文件定义此ID. (推荐在资源头文件resource.h.) 因为 最大的资源Id是32,779 , 所以你可以如下定义WebBrowser 控件的ID:
+
+#define IDC_WEBBROWSER  
+
+35000
+
+此数高于resource.h中的任何资源ID, 因此可以确信ID 数字不会同采用ClassWizard添加的ID冲突.现在可以采用使用ID的 Create 方法来创建WebBrowser控件:
+
+if (!m_webBrowser.Create(NULL, WS_CHILD|WS_VISIBLE,
+
+CRect(), this, IDC_WEBBROWSER)) 
+
+{
+return -1; 
+}
+
+下一步声明OnCommandStateChange 方法，该方法将在WebBrowser控件激发CommandStateChange 事件时被调用.可声明 如下:
+
+void OnCommandStateChange(long lCommand, BOOL bEnable);
+
+在 OnCommandStateChange 方法的是现代码中, 设定表示Go Forward 或者 Go Back 想得导航菜单项的数据成员为使能或者禁止. 该书据成员将被UPDATE_COMMAND_UI 句柄使用。以下为OnCommandStateChange 方法实现:
+
+void CMfcWebHostView::OnCommandStateChange(long lCommand, BOOL bEnable)
+
+{
+
+switch(lCommand) 
+
+{ 
+
+// Forward command 
+// 
+
+case CSC_NAVIGATEFORWARD: 
+m_fForwardEnabled = bEnable; 
+break; 
+
+// Back command 
+
+// 
+
+case CSC_NAVIGATEBACK: 
+
+m_fBackEnabled = bEnable; 
+
+break; 
+
+default: 
+
+break; 
+
+} 
+
+}
+
+声明m_fForwardEnabled 和 m_fBackEnabled 数据变量为保护成员，类型为BOOL .同样在构造函数中谁的些数据成员为TRUE。 .
+
+现在当Go Forward和Go Back的菜单 UPDATE_COMMAND_UI 被处理, 你可以直接进行设置. 下为示例代码:
+
+void CMfcWebHostView::OnUpdateNavigateGoForward(CCmdUI* pCmdUI) 
+
+{
+pCmdUI->Enable(m_fForwardEnabled); 
+}
+
+void CMfcWebHostView::OnUpdateNavigateGoBack(CCmdUI* pCmdUI) 
+
+{
+pCmdUI->Enable(m_fBackEnabled); 
+}
+
+DocumentComplete
+当一个文档完整的完成下载Internet Explorer 激发DocumentComplete 事件. 仅仅当此事件激发后 文档对象才可安全使用.在一个无帧的Web页情形中文档对象是IHTMLDocument2 对象, 我们以后会讨论. 当文档对象准备好可用,他的状态为READYSTATE_COMPLETE .
+
+关于 DocumentComplete 事件以西击点需要注意:
+
+·         在没有帧的web页, DocumentComplete 事件在下载完成后激发一次.
+
+在多帧的 web 页，此事件激发多次 . 并非每一个帧激发一个事件 , 但每一个帧激发 DownloadBegin 事件将会相应激发 DocumentComplete 事件 .
+DocumentComplete 又一个指向 IDispatch 的指针参数 , 该参数指向激发此事件的窗口 . 此窗口可以是帧中的窗口
+顶级帧在所有子帧激发了各自的 DocumentComplete 事件后激发自己的 DocumentComplete 事件。 因此 , ，要看一个 web 页是否完整下载完成 , 你需要从该事件的处理句柄中获取由事件产地过来的 IDispatch 参数的 IUnknown 接口。下一步，比较 IUnknown 接口是否指向你正宿主的 WebBrowser 控件或者自动化的 IE 的实例的 IUnknown 接口 . 如果这两个指针相同，这意味着全部 HTML, 图片 images, 控件 , 以及诸如此类在顶级帧或者子帧的全部对象元素都被下载了 .
+ 
+VB中实现以上四点及其容易.仅需要检查发送给事件的pDisp 参数事一个WebBrowser 对象. Visual Basic小心检查这些对象的 Iunknown 否为同一个对象 .此处为VB代码：:
+
+Private Sub WebBrowser1_DocumentComplete(ByVal pDisp As Object,
+
+URL As Variant) 
+
+If (pDisp Is WebBrowser1.Object) Then 
+
+MsgBox "The document is finished loading." 
+
+End If 
+
+End Sub
+
+实现以上四点在Visual C++ 应用程序里较困难一点,但你可以做到! 首先在DocumentComplete 事件的宏中如下声明:
+
+ON_EVENT(CMfcWebHostView, IDC_WEBBROWSER, DISPID_DOCUMENTCOMPLETE,
+
+OnDocumentComplete, VTS_DISPATCH VTS_PVARIANT) 
+
+
+接下来声明OnDocumentComplete 方法作为事件处理句柄
+
+void OnDocumentComplete(LPDISPATCH lpDispatch, VARIANT FAR* URL);
+
+最后,实现该方法以检测 是否页面已经下载,我们得到我们宿主控制bBrowser 控件的IUnknown . (注意我们不是简单获取指向 IUnknown ，而是要调用GetControlUnknown 方法. GetControlUnknown 方法返回的IUnknown 指针 实际上并不等于被宿主话的 WebBrowser控件的IUnknown . 那将返回IOleObject 接口指针.) 下一步， 获取IUnknown 指针，如果QueryInterface 查询得到的Dispatch 参数同Iunknown 接口是同一对象,则页面完成整个下载。.
+
+void CMfcWebHostView::OnDocumentComplete(LPDISPATCH lpDispatch,
+
+VARIANT FAR* URL) 
+
+{
+
+HRESULT   
+
+hr; 
+
+LPUNKNOWN lpUnknown; 
+
+LPUNKNOWN lpUnknownWB = NULL; 
+
+LPUNKNOWN lpUnknownDC = NULL; 
+
+lpUnknown = m_webBrowser.GetControlUnknown(); 
+
+
+   
+
+
+
+
+
+
+ASSERT(lpUnknown); 
+
+
+  
+
+
+   
+
+
+
+
+
+
+if (lpUnknown) 
+
+
+   
+
+
+
+
+
+
+{ 
+
+
+      
+
+
+
+
+
+
+// Get the pointer to the IUnknown interface of the WebBrowser  
+
+
+      
+
+
+
+
+
+
+// control being hosted. The pointer to the IUnknown returned from  
+
+
+      
+
+
+
+
+
+
+// GetControlUnknown is not the pointer to the IUnknown of the  
+
+
+      
+
+
+
+
+
+
+// WebBrowser control. It's actually a pointer to the IOleObject. 
+
+
+      
+
+
+
+
+
+
+//  
+
+
+      
+
+
+
+
+
+
+hr = lpUnknown->QueryInterface(IID_IUnknown, 
+
+
+                                     
+
+
+
+
+
+
+(LPVOID*)&lpUnknownWB); 
+
+
+  
+
+
+      
+
+
+
+
+
+
+ASSERT(SUCCEEDED(hr)); 
+
+
+  
+
+
+      
+
+
+
+
+
+
+if (FAILED(hr)) 
+
+
+         
+
+
+
+
+
+
+return; 
+
+
+  
+
+
+      
+
+
+
+
+
+
+// Get the pointer to the IUnknown of the object that fired this  
+
+
+      
+
+
+
+
+
+
+// event. 
+
+
+      
+
+
+
+
+
+
+// 
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+hr = lpDispatch->QueryInterface(IID_IUnknown,  
+
+
+                                      
+
+
+
+
+
+
+(LPVOID*)&lpUnknownDC); 
+
+
+  
+
+
+      
+
+
+
+
+
+
+ASSERT(SUCCEEDED(hr)); 
+
+
+  
+
+
+      
+
+
+
+
+
+
+if (SUCCEEDED(hr) && lpUnknownWB == lpUnknownDC) 
+
+
+      
+
+
+
+
+
+
+{ 
+
+
+         
+
+
+
+
+
+
+// The document has finished loading. 
+
+
+    
+
+
+
+
+
+
+     
+
+
+
+
+
+
+// 
+
+
+         
+
+
+
+
+
+
+MessageBox("The document has finished loading."); 
+
+
+      
+
+
+
+
+
+
+} 
+
+
+  
+
+
+      
+
+
+
+
+
+
+if (lpUnknownWB) 
+
+
+         
+
+
+
+
+
+
+lpUnknownWB->Release(); 
+
+
+  
+
+
+      
+
+
+
+
+
+
+if (lpUnknownDC)
+
+lpUnknownDC->Release();
+}
+}
+有一点需要注意上面的代码我们在GetControlUnknown 返回的IUnknown 接口指针使用时并没有进行Release ,因为b IUnknown 指针并没有在GetControlUnknown方法中 AddRef '. GetControlUnknown 方法仅仅返回一个IOleObject 数据成员的指针，该指针由控件站点类—CcontrolSite 操纵处理. 如果你释放了IUnknown 接口指针, 载你关闭应用程序时,一个访问违例将会发生，因为MFC 将试图在对象被删除时候多释放一次.
+
+DownloadBegin
+DownloadBegin 事件通知应用程序一个导航操作开始. 一般情况下该事件在BeforeNavigate2 事件之后激发, 除非导航操作在BeforeNavigate2 事件处理过程中被取消.容器应当显示动画或者忙指示当前正处于连接的DownloadBegin 事件. 每一个 DownloadBegin 事件有一个相应的DownloadComplete 事件. 在刷新页面的情形中, DownloadBegin 和 DownloadComplete 使唯一的被激发的导航事件.
+
+DownloadComplete
+DownloadComplete 在一个导航操作完成时候发生, 停止, 或者失败. 不像 NavigateComplete2 仅仅当成功导航才发生, DownloadComplete 总是在道涵开始后激发.任何在DownloadBegin 中显示的动画或者忙指示将会在DownloadComplete 中停止.
+
+NavigateComplete2
+NavigateComplete2 事件在导航到一个超连接整个窗口或者帧集合的元素全部完成时候发生. 第一此事件发生表示文档document已经准备好.在此事件发生后, 你可以通过Document 属性存取文档（document）而不接收到错误.但是能够访问一个文档不意味着你访问文档使安全的.你可以在DocumentComplete 事件激发后安全访问文档.
+
+档你需要访问document对象但是不需要访问文档内的元素，你可以在NavigateComplete2 事件中尽可能快的处理,例如当你在文打工通过高级宿主接口. NavigateComplete2 事件有2个参数—IDispatch of 代表激发事件的对象URL 为你需要导航到的URL.
+
+NewWindow2
+NewWindow2 档用户显示一个新窗口以进行新导航显示web页或者其他资源时发生.在WebBrowser控件响应柄进行预处理 (举例来说, 在响应window .open 方法).
+
+NewWindow2 也在Navigate 或者 Navigate2 方法被调用且navOpenInNewWindow 标志被设定时发生. 档采用文件菜单中的New Window按钮时并不发生(Internet Explorer帧不是一个 HTML 帧; 它是帧窗口.) 因此, WebBrowser 对象不知道什么时候新窗口将被打开. 因为 NewWindow2 有时候很难使用, 所以我们来检查它的两个参数: ppDisp and Cancel.
+
+ppDisp 参数是接口指针, 一般是接收新WebBrowser 或者 InternetExplorer 对象的IDispatch 接口指针, 是你能够创建一个Internet Explorer新实例以便能够控制来自你的应用程序导航产生的新窗口. 该实例开始为新建的, 隐藏的, （暂时）不可导航WebBrowser 或者 InternetExplorer 对象. 在NewWindow2事件句柄函数返回之前, InternetExplorer 对象激发NewWindow2 事件将配置新WebBrowser对象的导航目标位置.
+
+另外参数, Cancel , 时取消(Cancel)标志的地址. 应用程序能够设定此参数为TRUE 以取消导航操作或者设定为FALSE 以允许新建窗口操作. 设定Cancel 为 TRUE 完全取消新建窗口操作和导航.
+
+如果你不在NewWindow2 事件处理过程中作任何事, 新的 InternetExplorer 对象将自动建立. 一些原因你想控制NewWindow2 事件以便控制新建InternetExplorer 对象. 为什么? 因为你想限制Internet Explorer的实例数量,或者你想控制创建的实例的事件.
+
+以下 NewWindow2 事件控制函数中; 建立了一个新的, 隐藏的, 不可导航的Internet Explorer实例； 并且设定ppDisp 参数指向新实例.如果你想，你可以加入任何接收新实例事件的代码.
+
+void CMyEvtSink::NewWindow2(LPDISPATCH* ppDisp, BOOL* Cancel)
+{
+// Note that m_pIE is a class member of type IWebBrowser2*.
+
+HRESULT hr = CoCreateInstance(CLSID_InternetExplorer, NULL, 
+
+CLSCTX_LOCAL_SERVER, IID_IWebBrowser2, 
+
+(void**)&m_pIE);
+
+if (hr == S_OK)
+
+*ppDisp = (IDispatch*)pIE;
+
+// Do not set Cancel to TRUE. If you do,
+
+// the navigation will be completely canceled.
+
+}
+
+另外的原因控制NewWindow2 事件是由于你想你应用程序在用户选择在新窗口打开一个url时进行控制. 如果你不进行控制NewWindow2 事件, Internet Explorer 新实例将被创建.
+
+以下为控制新建窗口的vb代码:
+
+Private Sub WebBrowser1_NewWindow2(ppDisp As Object, Cancel As Boolean)
+
+Dim frmWB As Form1
+
+Set frmWB = New Form1
+
+Set ppDisp = frmWB.WebBrowser1.Object
+
+frmWB.Visible = True
+
+Set frmWB = Nothing
+
+End Sub
+
+在此NewWindow2 事件代码中,档一个新常口需要被创建, 我们建立一个新的当前窗体Form1 的拷贝. 在此表单窗体, 相当于Internet Explorer的新实例,将处理导航.
+
+在mfc中我们需要首先加入NewWindow2 事件的映射条目到视图类的事件映射宏. (不要忘记包含 ExDispID.h in, 那里有DISPID_NEWWINDOW2 定义.)
+
+ON_EVENT(CMfcWebHostView, IDC_WEBBROWSER, DISPID_NEWWINDOW2,
+
+OnNewWindow2, VTS_PDISPATCH VTS_PBOOL)
+
+下一步声明OnNewWindow2 方法:
+
+void OnNewWindow2(LPDISPATCH* ppDisp, BOOL* Cancel);
+
+最后实现OnNewWindow2 方法以创建一个新的MfcWebHost窗口实例:
+
+void CMfcWebHostView::OnNewWindow2(LPDISPATCH FAR* ppDisp,
+
+BOOL FAR* Cancel)
+
+{
+
+// Ensure that ppDisp is not NULL.
+
+// If it is NULL, you probably specified
+
+// VT_DISPATCH for the first parameter in 
+
+// the ON_EVENT macro for NewWindow2 in 
+
+// the event sink map. The correct parameter
+
+// type is VT_PDISPATCH.
+
+//
+
+ASSERT(ppDisp);
+
+if (!ppDisp)
+
+return;
+
+// Get a pointer to the application object
+
+// for this application.
+
+//
+
+CWinApp* pApp = AfxGetApp();
+
+// Get the correct document template.
+
+//
+
+CDocTemplate* pDocTemplate;
+
+POSITION pos = pApp->GetFirstDocTemplatePosition();
+
+pDocTemplate = pApp->GetNextDocTemplate(pos);
+
+ASSERT(pDocTemplate);
+
+// Create the new frame.
+
+CFrameWnd* pNewFrame = pDocTemplate->CreateNewFrame(GetDocument(),
+
+(CFrameWnd*)AfxGetMainWnd());
+
+ASSERT(pNewFrame);
+
+// Activate the frame, and set its active view.
+
+//
+
+pDocTemplate->InitialUpdateFrame(pNewFrame, NULL);
+
+CMfcWebHostView* pWbView = 
+
+(CMfcWebHostView*)pNewFrame->GetActiveView();
+
+ASSERT(pWbView);
+
+*ppDisp = pWbView->m_webBrowser.GetApplication();
+
+}
+
+如果你在sid或者mdi应用程序中控制一个WebBrowser控件,实现OnNewWindow2 方法是复杂的且需要知道如何解决同文档模版如何工作. 或许, 如果你在一个给予对话框的应用程序控制一个WebBrowser控件是较为容易的.此处为示例：
+
+void CMyDlg::OnNewWindow2(LPDISPATCH FAR* ppDisp, BOOL FAR* Cancel) 
+{
+m_dlgNewWB = new CMyDlg;
+
+m_dlgNewWB->Create(IDD_MYDLG_DIALOG);
+
+*ppDisp = m_dlgNewWB->m_webBrowser.GetApplication();
+
+}
+
+记住当你完成打开的新对话框后删除（delete） m_dlgNewWB . 且不要在CMyDlg::OnInitDialog 方法中导航, 因为这样代码将不会工作.
+
+                 
+
+ 
+
+ProgressChange
+ProgressChange 事件通告你的应用程序下在操作状态已经更新. ProgressChange 有两个参数:
+
+·         Progress. 总计有多少进度将被展示, 如果为-1 表示整个进度已经完成
+
+ProgressMax. 最大进度值
+容器可通过此事件显示下载进度。
+ 
+事件发生序列
+下图展示了IE的事件发生序列.但这仅仅为不包含帧的普通网页浏览. (没有包含诸如 ProgressChange , CommandStateChange , OnToolBar , 等等事件.)不是所有事件都会被激发. 但是 BeforeNavigate2 和DocumentComplete 每次浏览都会被激发.
+
+ 
+
+    
+
+Figure 7-5. The sequence of events fired by the WebBrowser control during a typical navigation.
