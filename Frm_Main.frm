@@ -276,6 +276,7 @@ Private Function resetfilename(ByVal name As String) As String
     name = clear(name, "?")
     name = clear(name, "<")
     name = clear(name, ">")
+    name = clear(name, ":")
     resetfilename = name
 End Function
 
