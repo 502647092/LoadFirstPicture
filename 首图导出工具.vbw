@@ -1,5 +1,5 @@
-Frm_Main = 0, 0, 984, 374, , 0, 0, 918, 535, C
+Frm_Main = 0, 0, 984, 374, , 0, 0, 1070, 535, C
 TzDownload = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 TzListBox = 0, 0, 0, 0, C, 0, 0, 0, 0, C
-Frm_Download = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+Frm_Download = 44, 44, 1095, 418, , 110, 110, 1094, 484, C
 TzProgressBar = 0, 0, 0, 0, C, 0, 0, 0, 0, C

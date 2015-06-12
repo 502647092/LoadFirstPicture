@@ -10,6 +10,13 @@ Begin VB.Form Frm_Main
    ScaleHeight     =   9390
    ScaleWidth      =   19035
    StartUpPosition =   3  '´°¿ÚÈ±Ê¡
+   Begin VB.ListBox lurl 
+      Height          =   5100
+      Left            =   45
+      TabIndex        =   16
+      Top             =   1350
+      Width           =   11670
+   End
    Begin VB.CommandButton pic 
       Caption         =   "Í¼Æ¬"
       Height          =   300
@@ -204,14 +211,27 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 Dim strUrl As String
+Dim dWinFolder As New ShellWindows
+Dim WithEvents eventIE As WebBrowser_V1
+Attribute eventIE.VB_VarHelpID = -1
+
+Private Sub Form_Load()
+    Dim objIE As Object
+    For Each objIE In dWinFolder
+    lurl.AddItem objIE.FullName
+        If InStr(1, objIE.FullName, "iexplore.exe") <> 0 Then
+            lurl.AddItem objIE.LocationURL
+        End If
+    Next
+End Sub
 
 Private Sub alibaba_Click()
     web(0).Navigate2 "http://work.1688.com/home/page/index.htm#nav/home"
 End Sub
-
-Private Sub Form_Load()
-    web(0).Navigate2 "http://192.168.0.8:83/"
-End Sub
+'
+'Private Sub Form_Load()
+'    web(0).Navigate2 "http://192.168.0.8:83/"
+'End Sub
 
 Private Sub Form_Resize()
     On Error Resume Next
