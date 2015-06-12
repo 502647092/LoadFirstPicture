@@ -1,17 +1,17 @@
-ï»¿1.è·å–WebBrowseråŠ è½½ç½‘é¡µçš„å†…å®¹
+1.»ñÈ¡WebBrowser¼ÓÔØÍøÒ³µÄÄÚÈİ
 
-WebBrowser1.Document.getElementById("kw").Value = "VBç¼–ç¨‹"
+WebBrowser1.Document.getElementById("kw").Value = "VB±à³Ì"
 
-WebBrowser1.Document.getElementById("f").submit 'æäº¤è¡¨å•
+WebBrowser1.Document.getElementById("f").submit 'Ìá½»±íµ¥
 
-2.å¾€WebBrowseræ§ä»¶å†™å…¥å†…å®¹
+2.ÍùWebBrowser¿Ø¼şĞ´ÈëÄÚÈİ
 
 
 WebBrowser1.Document.write str
 
 
 
-3. æ“ä½œé¡µé¢å…ƒç´ 
+3. ²Ù×÷Ò³ÃæÔªËØ
 
 
 for(i=0;i<document.getElementsByTagName.length;i++){
@@ -20,108 +20,108 @@ for(i=0;i<document.getElementsByTagName.length;i++){
 
 }
 
-2.webbrowseræ§ä»¶çš„DocumentCompleteå’ŒDownloadCompleteçš„åŒºåˆ«
+2.webbrowser¿Ø¼şµÄDocumentCompleteºÍDownloadCompleteµÄÇø±ğ
 
-æ–‡æ¡£å®Œå…¨ä¸‹è½½åï¼Œä¸€ä¸ª DownloadComplete äº‹ä»¶å°±è¢«å¼•å‘ã€‚è¿™å¹¶ä¸ä¸€å®šè¡¨æ˜å¯ä»¥é€šè¿‡å¯¹è±¡æ¨¡å‹å®‰å…¨åœ°è®¿é—®æ–‡æ¡£å†…å®¹äº†ã€‚DocumentComplete äº‹ä»¶æ‰è¡¨æ˜æ‰€æœ‰çš„å·¥ä½œéƒ½å·²å®Œæˆå¹¶ä¸”æ–‡æ¡£å·²ç»å°±ç»ªã€‚ 
+ÎÄµµÍêÈ«ÏÂÔØºó£¬Ò»¸ö DownloadComplete ÊÂ¼ş¾Í±»Òı·¢¡£Õâ²¢²»Ò»¶¨±íÃ÷¿ÉÒÔÍ¨¹ı¶ÔÏóÄ£ĞÍ°²È«µØ·ÃÎÊÎÄµµÄÚÈİÁË¡£DocumentComplete ÊÂ¼ş²Å±íÃ÷ËùÓĞµÄ¹¤×÷¶¼ÒÑÍê³É²¢ÇÒÎÄµµÒÑ¾­¾ÍĞ÷¡£ 
 
-DocumentComplete urlè¯·æ±‚çš„é¡µé¢å®Œæˆï¼›å½“æ•´ä¸ªæ–‡æ¡£å®Œæˆæ—¶æ¿€å‘ï¼Œåˆ·æ–°é¡µé¢ä¸æ¿€å‘ 
-DownloadComplete urlä¸­è¯·æ±‚çš„ä¸‹è½½å®Œæˆï¼›å½“æŸé¡¹ä¸‹è½½æ“ä½œå·²ç»å®Œæˆåæ¿€å‘ï¼Œåˆ·æ–°ä¹Ÿå¯æ¿€å‘æ­¤äº‹ä»¶ 
-DownloadComplete äº‹ä»¶æ¯” DocumentComplete äº‹ä»¶å…ˆè§¦å‘
-
- 
-
-ä¸€ä¸ªDocumentå¯èƒ½åŒ…æ‹¬å¤šä¸ªDownloadï¼Œä¾‹å¦‚Linkçš„CSSã€è„šæœ¬å’Œå›¾ç‰‡ã€‚å¤šä¸ªæ¡†æ¶çš„DownloadComplete     å’ŒDocumentCompleteçš„è§¦å‘å¹¶æ— æŒ‡å®šçš„å…ˆåæ¬¡åºï¼›ä½†æ˜¯å¯ä»¥æ ¹æ®DocumentCompleteçš„å‚æ•°åˆ¤æ–­æ˜¯å“ªä¸€ä¸ªæµè§ˆå™¨å¯¹è±¡è§¦å‘äº†äº‹ä»¶ï¼ˆæ¡†æ¶ä¹Ÿæ˜¯æµè§ˆå™¨å¯¹è±¡ï¼‰
+DocumentComplete urlÇëÇóµÄÒ³ÃæÍê³É£»µ±Õû¸öÎÄµµÍê³ÉÊ±¼¤·¢£¬Ë¢ĞÂÒ³Ãæ²»¼¤·¢ 
+DownloadComplete urlÖĞÇëÇóµÄÏÂÔØÍê³É£»µ±Ä³ÏîÏÂÔØ²Ù×÷ÒÑ¾­Íê³Éºó¼¤·¢£¬Ë¢ĞÂÒ²¿É¼¤·¢´ËÊÂ¼ş 
+DownloadComplete ÊÂ¼ş±È DocumentComplete ÊÂ¼şÏÈ´¥·¢
 
  
 
-ä»¥ä¸‹è½¬è‡ªï¼šhttp://blog.csdn.net/shanhe/archive/2005/08/11/451681.aspx ï¼Œæ›´å¤šå†…å®¹æµè§ˆè¯¥é¡µé¢
+Ò»¸öDocument¿ÉÄÜ°üÀ¨¶à¸öDownload£¬ÀıÈçLinkµÄCSS¡¢½Å±¾ºÍÍ¼Æ¬¡£¶à¸ö¿ò¼ÜµÄDownloadComplete     ºÍDocumentCompleteµÄ´¥·¢²¢ÎŞÖ¸¶¨µÄÏÈºó´ÎĞò£»µ«ÊÇ¿ÉÒÔ¸ù¾İDocumentCompleteµÄ²ÎÊıÅĞ¶ÏÊÇÄÄÒ»¸öä¯ÀÀÆ÷¶ÔÏó´¥·¢ÁËÊÂ¼ş£¨¿ò¼ÜÒ²ÊÇä¯ÀÀÆ÷¶ÔÏó£©
+
+ 
+
+ÒÔÏÂ×ª×Ô£ºhttp://blog.csdn.net/shanhe/archive/2005/08/11/451681.aspx £¬¸ü¶àÄÚÈİä¯ÀÀ¸ÃÒ³Ãæ
 
 
 
 
 
-å¦‚ä½ æ‰€çŸ¥ï¼Œ Internet Exploreråƒå…¶ä»–COMå¯¹è±¡ä¸€æ ·æ¿€å‘äº‹ä»¶â€”é€šè¿‡è¿æ¥ç‚¹.ä½†å®é™…ä¸ŠInternet Explorerå¦‚ä½•æ¿€å‘äº‹ä»¶å‘¢?æ¯æ¬¡ Internet Exploreréœ€è¦å‘å®¢æˆ·æä¾›å…³äºå½“å‰æ´»åŠ¨çŠ¶æ€çš„ä¿¡æ¯, Internet Explorer æ¿€å‘é€šè¿‡DWebBrowserEvents2 è¿æ¥ç‚¹æ¿€å‘ä¸€ä¸ªäº‹ä»¶. (ä¹‹å‰åˆ°ç‰ˆæœ¬ 4, Internet Explorer é€šè¿‡ DWebBrowserEvents æ¥å£æ¿€å‘äº‹ä»¶.ä½†åˆ°äº†ç‰ˆæœ¬4.x å’Œ5, Internet Explorer é€šè¿‡ DWebBrowserEvents2 è¿æ¥ç‚¹.)
+ÈçÄãËùÖª£¬ Internet ExplorerÏñÆäËûCOM¶ÔÏóÒ»Ñù¼¤·¢ÊÂ¼ş¡ªÍ¨¹ıÁ¬½Óµã.µ«Êµ¼ÊÉÏInternet ExplorerÈçºÎ¼¤·¢ÊÂ¼şÄØ?Ã¿´Î Internet ExplorerĞèÒªÏò¿Í»§Ìá¹©¹ØÓÚµ±Ç°»î¶¯×´Ì¬µÄĞÅÏ¢, Internet Explorer ¼¤·¢Í¨¹ıDWebBrowserEvents2 Á¬½Óµã¼¤·¢Ò»¸öÊÂ¼ş. (Ö®Ç°µ½°æ±¾ 4, Internet Explorer Í¨¹ı DWebBrowserEvents ½Ó¿Ú¼¤·¢ÊÂ¼ş.µ«µ½ÁË°æ±¾4.x ºÍ5, Internet Explorer Í¨¹ı DWebBrowserEvents2 Á¬½Óµã.)
 
-æ³¨æ„
-å¦‚ä½•é¢†ä¼šåˆ° Internet Explorer åŠ æ³•é‚£äº›äº‹ä»¶ ? æœ€ä½³é€”å¾„æ˜¯ MSDN Online Web Workshop. å¦å¤–é‡‡ç”¨ OLE-COM Object Viewer
-ä¸åƒWebBrowser æ§ä»¶ å’Œ Internet Explorerçš„å…¶ä»–æ¥å£,æ˜¯å‰‘æ¥å£æ²¡æœ‰ç»§æ‰¿ä½“ç³». DWebBrowserEvents æ¥å£ä¸¥æ ¼åº”ç”¨äºInternet Explorer 3. å¦‚æœä½ æ­£å®¿ä¸»WebBrowser æ§ä»¶æˆ–è€…è‡ªåŠ¨åŒ–Internet Explorer 5, ä½ å¯ä»¥é€šè¿‡æ­¤æ¥å£æ¥æ”¶äº‹ä»¶â€”ä½†æ˜¯ä¸å¯æŒ‚æ¥. DWebBrowserEvents2 æ¥å£åŒ…å«çš„æ–¹æ³•æ˜¯ä¸ºInternet Explorer 5å®šåˆ¶çš„.ç”¨ DWebBrowserEvents2 æ›¿ä»£DWebBrowserEvents ï¼Œä½ å°†æœ‰æ›´å¤šçš„æ§åˆ¶èƒ½åŠ›. æ‰€ä»¥ä¸è¦å¿˜è®°æ¥å£çš„æœ€åé¢çš„2.
+×¢Òâ
+ÈçºÎÁì»áµ½ Internet Explorer ¼Ó·¨ÄÇĞ©ÊÂ¼ş ? ×î¼ÑÍ¾¾¶ÊÇ MSDN Online Web Workshop. ÁíÍâ²ÉÓÃ OLE-COM Object Viewer
+²»ÏñWebBrowser ¿Ø¼ş ºÍ Internet ExplorerµÄÆäËû½Ó¿Ú,ÊÇ½£½Ó¿ÚÃ»ÓĞ¼Ì³ĞÌåÏµ. DWebBrowserEvents ½Ó¿ÚÑÏ¸ñÓ¦ÓÃÓÚInternet Explorer 3. Èç¹ûÄãÕıËŞÖ÷WebBrowser ¿Ø¼ş»òÕß×Ô¶¯»¯Internet Explorer 5, Äã¿ÉÒÔÍ¨¹ı´Ë½Ó¿Ú½ÓÊÕÊÂ¼ş¡ªµ«ÊÇ²»¿É¹Ò½Ó. DWebBrowserEvents2 ½Ó¿Ú°üº¬µÄ·½·¨ÊÇÎªInternet Explorer 5¶¨ÖÆµÄ.ÓÃ DWebBrowserEvents2 Ìæ´úDWebBrowserEvents £¬Äã½«ÓĞ¸ü¶àµÄ¿ØÖÆÄÜÁ¦. ËùÒÔ²»ÒªÍü¼Ç½Ó¿ÚµÄ×îºóÃæµÄ2.
 
-å°½ç®¡DWebBrowserEvents2 æ˜¯ä¸€ä¸ªäº‹ä»¶æ¥å£, å®ƒå…¶å®å°±æ˜¯åƒIWebBrowser2   ä¸€æ ·çš„å¦å¤– COM æ¥å£,æ‰€ä»¥å®ƒå¯ä»¥åŒ…å«æ–¹æ³•. (D å¼€å¤´çš„å‘½åæ˜¯è¡¨ç¤ºè¿™æ˜¯æ´¾é£æ¥å£.ä¸€ä¸ªæ´¾é£æ¥å£æ˜¯ä¸€ä¸ªIDispatch æ¥å£.ä½†ä¸åŒäºæ™®é€šæ¥å£, æ´¾é£æ¥å£æ²¡æœ‰vtable.) å°±åƒä¸€ä¸ªæ¥å£ä¸€æ ·,æ´¾é£æ¥å£åªä¸è¿‡æä¾›ä¸€äº›å‡½æ•°çš„å®šä¹‰â€”ä»–ä»¬å¹¶ä¸çœŸå®å®ç°.äº‹ä»¶çš„å®ç°ç”±å®¢æˆ·æä¾›.ä¸¾ä¾‹æ¥è¯´ï¼Œä¸ºäº†è®©WebBrowser æ¿€å‘ä¸€ä¸ªäº‹ä»¶, åœ¨DWebBrowserEvents2 æ¥å£ä¸­é€‚å½“å®šä¹‰ä¸€äº›æ–¹æ³•.è¿™äº›æ–¹æ³•ç”±å®¢æˆ·å®ç°.ä½†WebBrowserä¸ç›´æ¥è°ƒç”¨è¿™äº›æ–¹æ³•.æ¢å¥è¯è®², WebBrowser å¹¶ä¸è°ƒç”¨DocumentComplete æ–¹æ³•.å› ä¸º DWebBrowserEvents2 æ˜¯æ´¾é£æ¥å£, WebBrowser é€šè¿‡IDispatch::Invoke è°ƒç”¨å®¢æˆ·çš„å®ç°. æ—©æœŸ, å½“WebBrowser è°ƒç”¨å®¢æˆ·çš„Invoke å®ç°, WebBrowser ä¼ é€’äº‹ä»¶è¢«æ¿€å‘çš„DISPID.
+¾¡¹ÜDWebBrowserEvents2 ÊÇÒ»¸öÊÂ¼ş½Ó¿Ú, ËüÆäÊµ¾ÍÊÇÏñIWebBrowser2   Ò»ÑùµÄÁíÍâ COM ½Ó¿Ú,ËùÒÔËü¿ÉÒÔ°üº¬·½·¨. (D ¿ªÍ·µÄÃüÃûÊÇ±íÊ¾ÕâÊÇÅÉÇ²½Ó¿Ú.Ò»¸öÅÉÇ²½Ó¿ÚÊÇÒ»¸öIDispatch ½Ó¿Ú.µ«²»Í¬ÓÚÆÕÍ¨½Ó¿Ú, ÅÉÇ²½Ó¿ÚÃ»ÓĞvtable.) ¾ÍÏñÒ»¸ö½Ó¿ÚÒ»Ñù,ÅÉÇ²½Ó¿ÚÖ»²»¹ıÌá¹©Ò»Ğ©º¯ÊıµÄ¶¨Òå¡ªËûÃÇ²¢²»ÕæÊµÊµÏÖ.ÊÂ¼şµÄÊµÏÖÓÉ¿Í»§Ìá¹©.¾ÙÀıÀ´Ëµ£¬ÎªÁËÈÃWebBrowser ¼¤·¢Ò»¸öÊÂ¼ş, ÔÚDWebBrowserEvents2 ½Ó¿ÚÖĞÊÊµ±¶¨ÒåÒ»Ğ©·½·¨.ÕâĞ©·½·¨ÓÉ¿Í»§ÊµÏÖ.µ«WebBrowser²»Ö±½Óµ÷ÓÃÕâĞ©·½·¨.»»¾ä»°½², WebBrowser ²¢²»µ÷ÓÃDocumentComplete ·½·¨.ÒòÎª DWebBrowserEvents2 ÊÇÅÉÇ²½Ó¿Ú, WebBrowser Í¨¹ıIDispatch::Invoke µ÷ÓÃ¿Í»§µÄÊµÏÖ. ÔçÆÚ, µ±WebBrowser µ÷ÓÃ¿Í»§µÄInvoke ÊµÏÖ, WebBrowser ´«µİÊÂ¼ş±»¼¤·¢µÄDISPID.
 
-æ³¨æ„
-æŸäº›å·¥å…·å¦‚ Visual Basic, MFC, å’Œ ATL æä¾› Invoke å®ç°
-è¡¨7-6 åˆ—å‡º WebBrowser äº‹ä»¶. (è¿™äº›æ˜¯WebBrowser æ§ä»¶å’ŒInternet Explorerä¾›æœ‰çš„äº‹ä»¶,å°½ç®¡æœ‰äº›äº‹ä»¶ä»…ä»…ç”¨äºè‡ªåŠ¨åŒ–Internet Explorer).
+×¢Òâ
+Ä³Ğ©¹¤¾ßÈç Visual Basic, MFC, ºÍ ATL Ìá¹© Invoke ÊµÏÖ
+±í7-6 ÁĞ³ö WebBrowser ÊÂ¼ş. (ÕâĞ©ÊÇWebBrowser ¿Ø¼şºÍInternet Explorer¹©ÓĞµÄÊÂ¼ş,¾¡¹ÜÓĞĞ©ÊÂ¼ş½ö½öÓÃÓÚ×Ô¶¯»¯Internet Explorer).
 
-æ³¨æ„
-å°½ç®¡æœ‰äº›æ–¹æ³•ä¸ºä¸åŒ…å« 2 . å°½ç®¡ DWebBrowserEvents2 å¹¶éç»§æ‰¿è‡ª WebBrowserEvents , DWebBrowserEvents2 è¿˜æ˜¯ åŒ¹é… DWebBrowserEvents ä¸­è¢«æ›´æ”¹çš„ï¼Œä»¥å…æ··æ·†ã€‚
-æ³¨æ„è¡¨ 7-6 é‡çš„å‚æ•°æœ‰äº›å€¼åŒæ ·æœ‰ VARIANT_ TRUE æˆ– VARIANT_FALSE . å¦‚æœä½ ä½¿ç”¨Visual C++,ç¡®ä¿¡åˆ†æ´¾ä½¿ç”¨è¿™äº›å€¼ä¸è¦ä½¿ç”¨ TRUE æˆ– FALSE . å¦‚æœä½ ä½¿ç”¨Visual Basic, å®ƒä¼šè‡ªåŠ¨å¸®åŠ©ä½ è½¬æ¢ï¼Œä½ å¯ä»¥æ¯”è¾ƒTrueå’ŒFalse.
+×¢Òâ
+¾¡¹ÜÓĞĞ©·½·¨Îª²»°üº¬ 2 . ¾¡¹Ü DWebBrowserEvents2 ²¢·Ç¼Ì³Ğ×Ô WebBrowserEvents , DWebBrowserEvents2 »¹ÊÇ Æ¥Åä DWebBrowserEvents ÖĞ±»¸ü¸ÄµÄ£¬ÒÔÃâ»ìÏı¡£
+×¢Òâ±í 7-6 ÖØµÄ²ÎÊıÓĞĞ©ÖµÍ¬ÑùÓĞ VARIANT_ TRUE »ò VARIANT_FALSE . Èç¹ûÄãÊ¹ÓÃVisual C++,È·ĞÅ·ÖÅÉÊ¹ÓÃÕâĞ©Öµ²»ÒªÊ¹ÓÃ TRUE »ò FALSE . Èç¹ûÄãÊ¹ÓÃVisual Basic, Ëü»á×Ô¶¯°ïÖúÄã×ª»»£¬Äã¿ÉÒÔ±È½ÏTrueºÍFalse.
 
-ç°åœ¨æ¥ä»”ç»†çœ‹çœ‹è¿™äº›äº‹ä»¶
+ÏÖÔÚÀ´×ĞÏ¸¿´¿´ÕâĞ©ÊÂ¼ş
 
-Table 7-6 WebBrowser äº‹ä»¶
+Table 7-6 WebBrowser ÊÂ¼ş
 
-ç§æœ‰äº‹ä»¶
-æè¿°
+Ë½ÓĞÊÂ¼ş
+ÃèÊö
 BeforeNavigate2
-åœ¨å¯¼èˆªä¹‹å‰å‘ç”Ÿ . ( è¯¥äº‹ä»¶å¹¶ä¸åœ¨ä¸åˆ·æ–°é¡µé¢çš„æ—¶å€™å‘ç”Ÿ )
+ÔÚµ¼º½Ö®Ç°·¢Éú . ( ¸ÃÊÂ¼ş²¢²»ÔÚ²»Ë¢ĞÂÒ³ÃæµÄÊ±ºò·¢Éú )
 CommandStateChange
-å½“å‘½ä»¤çŠ¶æ€æ”¹å˜æ—¶å‘ç”Ÿ . è¯¥äº‹ä»¶å‘Šè¯‰ä½ ä½•æ—¶ä½¿èƒ½æˆ–è€…ç¦æ­¢ Back ä»¥åŠ Forward èœå•åƒæˆ–è€…æŒ‰é’® .
+µ±ÃüÁî×´Ì¬¸Ä±äÊ±·¢Éú . ¸ÃÊÂ¼ş¸æËßÄãºÎÊ±Ê¹ÄÜ»òÕß½ûÖ¹ Back ÒÔ¼° Forward ²Ëµ¥Ïñ»òÕß°´Å¥ .
 DocumentComplete
-å½“æ•´ä¸ªæ–‡æ¡£å®Œå…¨å®Œæˆè£…è½½æ—¶å‘ç”Ÿ . å¦‚æœä½ åˆ·æ–°é¡µé¢ , æ­¤äº‹ä»¶å¹¶ä¸æ¿€å‘ .
+µ±Õû¸öÎÄµµÍêÈ«Íê³É×°ÔØÊ±·¢Éú . Èç¹ûÄãË¢ĞÂÒ³Ãæ , ´ËÊÂ¼ş²¢²»¼¤·¢ .
 DownloadBegin
-å½“ä¸€ä¸ªä¸‹è½½é¡¹ç›®å¼€å§‹æ—¶å€™å‘ç”Ÿ ï¼Œæ­¤äº‹ä»¶ä¹Ÿåœ¨ä½ åˆ·æ–°ï¼ˆ IWebBrowser2::Refresh. ï¼‰æ—¶å‘ç”Ÿ
+µ±Ò»¸öÏÂÔØÏîÄ¿¿ªÊ¼Ê±ºò·¢Éú £¬´ËÊÂ¼şÒ²ÔÚÄãË¢ĞÂ£¨ IWebBrowser2::Refresh. £©Ê±·¢Éú
 DownloadComplete
-å…šæ•´ä¸ªä¸‹è½½é¡¹ç›®å®Œæˆæ˜¯å‘ç”Ÿè¯¥äº‹ä»¶ä¹Ÿå‘ç”Ÿåœ¨å®Œæˆåˆ·æ–°é¡µé¢ .
+µ³Õû¸öÏÂÔØÏîÄ¿Íê³ÉÊÇ·¢Éú¸ÃÊÂ¼şÒ²·¢ÉúÔÚÍê³ÉË¢ĞÂÒ³Ãæ .
 NavigateComplete2
-å½“æ•´ä¸ªå¯¼èˆªå®Œæˆ . è¯¥äº‹ä»¶å¯¹åº”äº BeforeNavigate2 .
+µ±Õû¸öµ¼º½Íê³É . ¸ÃÊÂ¼ş¶ÔÓ¦ÓÚ BeforeNavigate2 .
 NewWindow2
-åœ¨ä¸€ä¸ªæ–°çš„çª—å£è¢«åˆ›å»ºä»¥æ˜¾ç¤º Web é¡µæˆ–è€…å…¶ä»–èµ„æºçš„æ—¶å€™å‘ç”Ÿã€‚è­¬å¦‚ä½ åœ¨é¡µé¢ä¸­ä»¥æ–°å»ºçª—å£çš„æ–¹å¼æ‰“å¼€ä¸€ä¸ªè¿æ¥
+ÔÚÒ»¸öĞÂµÄ´°¿Ú±»´´½¨ÒÔÏÔÊ¾ Web Ò³»òÕßÆäËû×ÊÔ´µÄÊ±ºò·¢Éú¡£Æ©ÈçÄãÔÚÒ³ÃæÖĞÒÔĞÂ½¨´°¿ÚµÄ·½Ê½´ò¿ªÒ»¸öÁ¬½Ó
 OnFullScreen
-å½“ FullScreen å±æ€§è¢«æ”¹å˜æ—¶å€™å‘ç”Ÿ . æ­¤äº‹ä»¶æºå¸¦ä¸€ä¸ª VARIANT_ BOOL ç±»å‹çš„ è¾“å…¥å‚æ•°æŒ‡ç¤º Internet Explorer æ˜¯å¦å¤„äºå…¨å±ï¼ˆ full-screen ï¼‰ æ¨¡å¼ (VARIANT_TRUE ) æˆ–è€…å¤„äºæ™®é€šæ¨¡å¼ (VARIANT_FALSE ).
+µ± FullScreen ÊôĞÔ±»¸Ä±äÊ±ºò·¢Éú . ´ËÊÂ¼şĞ¯´øÒ»¸ö VARIANT_ BOOL ÀàĞÍµÄ ÊäÈë²ÎÊıÖ¸Ê¾ Internet Explorer ÊÇ·ñ´¦ÓÚÈ«ÆÁ£¨ full-screen £© Ä£Ê½ (VARIANT_TRUE ) »òÕß´¦ÓÚÆÕÍ¨Ä£Ê½ (VARIANT_FALSE ).
 OnMenuBar
-èœå•æ¡ MenuBar å±æ€§è¢«æ”¹å˜çš„æ—¶å€™å‘ç”Ÿ . ä¸€ä¸ª VARIANT_ BOOL ç±»å‹çš„ è¾“å…¥å‚æ•°æŒ‡   Internet Explorer çš„èœå•æ¡å±æ€§æ˜¯å¯è§ (VARIANT_TRUE ) æˆ–è€…éšè— (VARIANT_ FALSE ).
+²Ëµ¥Ìõ MenuBar ÊôĞÔ±»¸Ä±äµÄÊ±ºò·¢Éú . Ò»¸ö VARIANT_ BOOL ÀàĞÍµÄ ÊäÈë²ÎÊıÖ¸   Internet Explorer µÄ²Ëµ¥ÌõÊôĞÔÊÇ¿É¼û (VARIANT_TRUE ) »òÕßÒş²Ø (VARIANT_ FALSE ).
 OnQuit
-å½“ Internet Explorer æ­£åœ¨é€€å‡ºæ—¶å‘ç”Ÿ . è¯¥äº‹ä»¶å½“ç”¨æˆ·å…³é—­æµè§ˆå™¨æˆ–è€…è°ƒç”¨ Quit æ–¹æ³• .
+µ± Internet Explorer ÕıÔÚÍË³öÊ±·¢Éú . ¸ÃÊÂ¼şµ±ÓÃ»§¹Ø±Õä¯ÀÀÆ÷»òÕßµ÷ÓÃ Quit ·½·¨ .
 OnStatusBar
-å½“ StatusBar å±æ€§è¢«æ”¹å˜çš„æ—¶å€™å‘ç”Ÿã€‚äº‹ä»¶æºå¸¦ VARIANT_ BOOL ç±»å‹çš„è¾“å…¥å‚æ•° æŒ‡ç¤º Internet Explorer çš„çŠ¶æ€æ¡æ˜¯å¦å¯è§ (VARIANT_TRUE ) æˆ–è€…éšè— (VARIANT_FALSE ).
+µ± StatusBar ÊôĞÔ±»¸Ä±äµÄÊ±ºò·¢Éú¡£ÊÂ¼şĞ¯´ø VARIANT_ BOOL ÀàĞÍµÄÊäÈë²ÎÊı Ö¸Ê¾ Internet Explorer µÄ×´Ì¬ÌõÊÇ·ñ¿É¼û (VARIANT_TRUE ) »òÕßÒş²Ø (VARIANT_FALSE ).
 OnTheaterMode
-å½“ TheaterMode å±æ€§è¢«æ”¹å˜æ—¶å‘ç”Ÿ . äº‹ä»¶æºå¸¦ VARIANT_ BOOL ç±»å‹çš„è¾“å…¥å‚æ•° æŒ‡ç¤º Internet Explorer çš„çŠ¶æ€æ¡æ˜¯å¦å¯è§ (VARIANT_TRUE ) æˆ–è€…éšè— (VARIANT_FALSE ).
+µ± TheaterMode ÊôĞÔ±»¸Ä±äÊ±·¢Éú . ÊÂ¼şĞ¯´ø VARIANT_ BOOL ÀàĞÍµÄÊäÈë²ÎÊı Ö¸Ê¾ Internet Explorer µÄ×´Ì¬ÌõÊÇ·ñ¿É¼û (VARIANT_TRUE ) »òÕßÒş²Ø (VARIANT_FALSE ).
 OnToolBar
-å½“ ToolBar å±æ€§è¢«æ”¹å˜æ—¶å‘ç”Ÿ . äº‹ä»¶æºå¸¦ VARIANT_ BOOL ç±»å‹çš„è¾“å…¥å‚æ•° æŒ‡ç¤º Internet Explorer çš„çŠ¶æ€æ¡æ˜¯å¦å¯è§ (VARIANT_TRUE ) æˆ–è€…éšè— (VARIANT_FALSE ).
+µ± ToolBar ÊôĞÔ±»¸Ä±äÊ±·¢Éú . ÊÂ¼şĞ¯´ø VARIANT_ BOOL ÀàĞÍµÄÊäÈë²ÎÊı Ö¸Ê¾ Internet Explorer µÄ×´Ì¬ÌõÊÇ·ñ¿É¼û (VARIANT_TRUE ) »òÕßÒş²Ø (VARIANT_FALSE ).
 OnVisible
-å½“ WebBrowser å°†è¢«æ˜¾ç¤ºæˆ–è€…éšè—æ—¶å‘ç”Ÿã€‚ . äº‹ä»¶æºå¸¦ VARIANT_ BOOL ç±»å‹çš„è¾“å…¥å‚æ•° æŒ‡ç¤º Internet Explorer çš„çŠ¶æ€æ¡æ˜¯å¦å¯è§ (VARIANT_TRUE ) æˆ–è€…éšè— (VARIANT_FALSE ).
+µ± WebBrowser ½«±»ÏÔÊ¾»òÕßÒş²ØÊ±·¢Éú¡£ . ÊÂ¼şĞ¯´ø VARIANT_ BOOL ÀàĞÍµÄÊäÈë²ÎÊı Ö¸Ê¾ Internet Explorer µÄ×´Ì¬ÌõÊÇ·ñ¿É¼û (VARIANT_TRUE ) »òÕßÒş²Ø (VARIANT_FALSE ).
 ProgressChange
-å½“ä¸‹è½½è¿›åº¦è¢«æ›´æ–°æ—¶å€™å‘ç”Ÿ
+µ±ÏÂÔØ½ø¶È±»¸üĞÂÊ±ºò·¢Éú
 PropertyChange
-å½“å±æ€§æ”¹å˜æ—¶å€™å‘ç”Ÿã€‚å…¸å‹çš„ , å½“ PutProperty æ–¹æ³•è¢«è°ƒç”¨æ—¶
+µ±ÊôĞÔ¸Ä±äÊ±ºò·¢Éú¡£µäĞÍµÄ , µ± PutProperty ·½·¨±»µ÷ÓÃÊ±
 StatusTextChange
-Internet Explorer å’Œ WebBrowser æ§ä»¶æ”¹å˜çŠ¶æ€æ¡æ—¶å€™å‘ç”Ÿã€‚å³ä½¿ webbrowser æ§ä»¶æ²¡æœ‰çŠ¶æ€æ¡ã€‚ StatusTextChange ç»™å®¢æˆ·ä¸€ä¸ªæ”¹å˜çŠ¶æ€æ¡çš„æœºä¼š
+Internet Explorer ºÍ WebBrowser ¿Ø¼ş¸Ä±ä×´Ì¬ÌõÊ±ºò·¢Éú¡£¼´Ê¹ webbrowser ¿Ø¼şÃ»ÓĞ×´Ì¬Ìõ¡£ StatusTextChange ¸ø¿Í»§Ò»¸ö¸Ä±ä×´Ì¬ÌõµÄ»ú»á
 TitleChange
-. å½“æ–‡æ¡£å¯¹è±¡çš„ title å¯ç”¨æˆ–è€…æ”¹å˜çš„æ—¶å€™å‘ç”Ÿ
+. µ±ÎÄµµ¶ÔÏóµÄ title ¿ÉÓÃ»òÕß¸Ä±äµÄÊ±ºò·¢Éú
 BeforeNavigate2
-BeforeNavigate2 å°±åƒå­—é¢ä¸Šæ‰€è¯´. å½“Internet Explorer å¯¼èˆªåˆ°ä¸€ä¸ªWEBé¡µæ˜¯æ¿€å‘; å› æ­¤, å½“ç”¨æˆ·è¾“å…¥ä¸€ä¸ª URL, ç‚¹å‡» Back æˆ–è€… Forward æŒ‰é’®ï¼Œ æˆ–è€…å¤„ç†ä¸€ä¸ªå¯¼èˆªæ—¶éƒ½ä¼šå‘ç”Ÿ. BeforeNavigate2   ä¹Ÿåœ¨WebBrowser æ§ä»¶å¯¼èˆªç±»æ–¹æ³•è°ƒç”¨æ—¶å‘ç”Ÿ, ä¾‹å¦‚ Navigate , Navigate2 , GoHome , æˆ–è€… GoSearch . ä¹Ÿè®¸, è¯¥äº‹ä»¶ä¸ä¼šåœ¨ä½ åˆ·æ–°é¡µé¢æ—¶å‘ç”Ÿ. å¦‚æœé¡µé¢ä¸Šæœ‰å¸§, BeforeNavigate2 å°†åƒé¡¶çº§çª—å£ä¸€æ ·è¢«æ¿€å‘ . BeforeNavigate2 ç”±7ä¸ªè¾“å…¥å‚æ•°, è§7-7.
+BeforeNavigate2 ¾ÍÏñ×ÖÃæÉÏËùËµ. µ±Internet Explorer µ¼º½µ½Ò»¸öWEBÒ³ÊÇ¼¤·¢; Òò´Ë, µ±ÓÃ»§ÊäÈëÒ»¸ö URL, µã»÷ Back »òÕß Forward °´Å¥£¬ »òÕß´¦ÀíÒ»¸öµ¼º½Ê±¶¼»á·¢Éú. BeforeNavigate2   Ò²ÔÚWebBrowser ¿Ø¼şµ¼º½Àà·½·¨µ÷ÓÃÊ±·¢Éú, ÀıÈç Navigate , Navigate2 , GoHome , »òÕß GoSearch . Ò²Ğí, ¸ÃÊÂ¼ş²»»áÔÚÄãË¢ĞÂÒ³ÃæÊ±·¢Éú. Èç¹ûÒ³ÃæÉÏÓĞÖ¡, BeforeNavigate2 ½«Ïñ¶¥¼¶´°¿ÚÒ»Ñù±»¼¤·¢ . BeforeNavigate2 ÓÉ7¸öÊäÈë²ÎÊı, ¼û7-7.
 
 Table 7-7 Input Parameters of the BeforeNavigate2 Event
 
 Parameter
 Description
 pDisp
-å°†å‘ç”Ÿå¯¼èˆªçš„é¡¶çº§çª—å£æˆ–è€…å¸§çš„ Idispatch æ¥å£çš„åœ°å€
+½«·¢Éúµ¼º½µÄ¶¥¼¶´°¿Ú»òÕßÖ¡µÄ Idispatch ½Ó¿ÚµÄµØÖ·
 URL
-å°†å¯¼èˆªè‡³çš„ URL
+½«µ¼º½ÖÁµÄ URL
 Flags
-ä¿ç•™
+±£Áô
 TargetFrameName
-æ˜¾ç¤ºèµ„æºçš„çª—å£æˆ–è€…å¸§çš„åå­—å­—ç¬¦ä¸²ï¼Œæˆ–è€…ä¸º NULL ï¼ˆå¦‚æœæ²¡æœ‰å‘½åï¼‰
+ÏÔÊ¾×ÊÔ´µÄ´°¿Ú»òÕßÖ¡µÄÃû×Ö×Ö·û´®£¬»òÕßÎª NULL £¨Èç¹ûÃ»ÓĞÃüÃû£©
 PostData
-HTTP POST ä¼ è¾“çš„æ•°æ®åœ°å€
+HTTP POST ´«ÊäµÄÊı¾İµØÖ·
 Headers
-å¢åŠ çš„å°†è¦å‘ç»™æœåŠ¡å™¨çš„ HTTP å¤´ . ä¸€èˆ¬ HTTP å¤´æŒ‡å®šå…¶å®ƒçš„æœåŠ¡å™¨è¦æ±‚ã€‚ä¼ é€ç»™æœåŠ¡å™¨çš„æ•°æ®ç±»å‹ã€çŠ¶æ€é©¬ç­‰
+Ôö¼ÓµÄ½«Òª·¢¸ø·şÎñÆ÷µÄ HTTP Í· . Ò»°ã HTTP Í·Ö¸¶¨ÆäËüµÄ·şÎñÆ÷ÒªÇó¡£´«ËÍ¸ø·şÎñÆ÷µÄÊı¾İÀàĞÍ¡¢×´Ì¬ÂíµÈ
 Cancel
-cancel æ ‡å¿—çš„åœ°å€ . è®¾ç½®ä¸º TRUE å¯å–æ¶ˆå¯¼èˆª
-æ³¨æ„æ‰“æ‰€å±å‚æ•°åŒ¹é…äºNavigate æˆ–è€… Navigate2 çš„è°ƒç”¨å‚æ•°.å¦‚æœ BeforeNavigate2 ç”±ä¸€ä¸ªæˆ–è€…å¤šä¸ªå¯¼èˆªç±»è°ƒç”¨æ¿€å‘,è¿™äº›å¯¼èˆªç±»çš„æ–¹æ³•å‚æ•° ä¼ é€’åˆ°BeforeNavigate2 æ–¹æ³•.
+cancel ±êÖ¾µÄµØÖ· . ÉèÖÃÎª TRUE ¿ÉÈ¡Ïûµ¼º½
+×¢Òâ´òËùÊô²ÎÊıÆ¥ÅäÓÚNavigate »òÕß Navigate2 µÄµ÷ÓÃ²ÎÊı.Èç¹û BeforeNavigate2 ÓÉÒ»¸ö»òÕß¶à¸öµ¼º½Ààµ÷ÓÃ¼¤·¢,ÕâĞ©µ¼º½ÀàµÄ·½·¨²ÎÊı ´«µİµ½BeforeNavigate2 ·½·¨.
 
-åœ¨äº‹ä»¶çš„å¥æŸ„å‡½æ•°ä¸­, ä½ å¯ä»¥ä½¿ç”¨Cancel å‚æ•°å–æ¶ˆå¯¼èˆª, æˆ–è€…ä½ å¯ä»¥æ˜¯ç”¨pDisp å‚æ•°ä¿®æ”¹å¯¼èˆªç›®çš„.è®¾ç½®Cancel å‚æ•°ä¸º VARIANT_TRUE å¯ä»¥å–æ¶ˆå¯¼èˆªï¼Œå¦‚æœä½ æƒ³ï¼Œä½ å¯ä»¥é€šè¿‡pDisp ä¿®æ”¹å‚æ•°å¯¼èˆªä¿¡æ¯ä¸”å¯¼èˆªåˆ°å¦å¤–çš„ä½ç½®.ä¸¾ä¾‹æ¥è¯´ï¼Œå¦‚æœæˆ‘ä»¬å‘åœæ­¢å½“å‰å¯¼èˆª, å¢åŠ ä¸€äº›å¤´ä¿¡æ¯,ä¸”å¯¼èˆªåˆ°åŸå…ˆçš„URL.åœ¨Visual Basic, æˆ‘ä»¬å¯ä»¥å¦‚ä¸‹ä»£ç å®ç°:
+ÔÚÊÂ¼şµÄ¾ä±úº¯ÊıÖĞ, Äã¿ÉÒÔÊ¹ÓÃCancel ²ÎÊıÈ¡Ïûµ¼º½, »òÕßÄã¿ÉÒÔÊÇÓÃpDisp ²ÎÊıĞŞ¸Äµ¼º½Ä¿µÄ.ÉèÖÃCancel ²ÎÊıÎª VARIANT_TRUE ¿ÉÒÔÈ¡Ïûµ¼º½£¬Èç¹ûÄãÏë£¬Äã¿ÉÒÔÍ¨¹ıpDisp ĞŞ¸Ä²ÎÊıµ¼º½ĞÅÏ¢ÇÒµ¼º½µ½ÁíÍâµÄÎ»ÖÃ.¾ÙÀıÀ´Ëµ£¬Èç¹ûÎÒÃÇÏòÍ£Ö¹µ±Ç°µ¼º½, Ôö¼ÓÒ»Ğ©Í·ĞÅÏ¢,ÇÒµ¼º½µ½Ô­ÏÈµÄURL.ÔÚVisual Basic, ÎÒÃÇ¿ÉÒÔÈçÏÂ´úÂëÊµÏÖ:
 
 Private Sub WebBrowser1_BeforeNavigate2(ByVal pDisp As Object, _
 
@@ -152,22 +152,22 @@ End If
 
 End Sub
 
-æˆ‘ä»¬éœ€è¦æ³¨æ„ä»¥ä¸Šä»£ç çš„å‡ ä¸ªé‡ç‚¹.
+ÎÒÃÇĞèÒª×¢ÒâÒÔÉÏ´úÂëµÄ¼¸¸öÖØµã.
 
-é¦–å…ˆä½ å¿…é¡»æ£€æŸ¥pDisp çš„ç±»å‹ä½¿ä¹‹ç¡®å®šä¸ºWebBrowser . å½“é¡µé¢åŒ…å«å¸§, pDisp å¯èƒ½ä¸æ˜¯ WebBrowser å¯¹è±¡ç”±æ­¤ä¸€äº›å¯¼èˆªä¼šå¯¼è‡´é”™è¯¯.
+Ê×ÏÈÄã±ØĞë¼ì²épDisp µÄÀàĞÍÊ¹Ö®È·¶¨ÎªWebBrowser . µ±Ò³Ãæ°üº¬Ö¡, pDisp ¿ÉÄÜ²»ÊÇ WebBrowser ¶ÔÏóÓÉ´ËÒ»Ğ©µ¼º½»áµ¼ÖÂ´íÎó.
 
-å…¶æ¬¡ä½ å¿…é¡»æ£€æŸ¥ç¡®ä¿¡Headers å‚æ•°æ˜¯ç©ºå­—ç¬¦ä¸²ä»¥é¿å…æ— é™å¾ªç¯.è®°ä½BeforeNavigate2 æ¯ä¸€æ¬¡å¯¼èˆªéƒ½ä¼šå‘ç”Ÿ.å› æ­¤å¦‚æœä½ åœ¨BeforeNavigate2 äº‹ä»¶å¤„ç†ä¸­è°ƒç”¨Navigate , å¦å¤–ä¸€æ¬¡ BeforeNavigate2 å°†è¢«æ¿€æ´». åœ¨å‰é¢çš„ä»£ç ä¸­, ä»…ä»…åœ¨Headers å‚æ•°ä¸ºç©ºæ‰è°ƒç”¨Navigate é¿å…äº†æ— é™å¾ªç¯. å¦‚æœHeaders å‚æ•°æ˜¯ç©º, Navigate å°†æºå¸¦éç©ºçš„ Headers å‚æ•°. ä¸‹ä¸€æ¬¡BeforeNavigate2 åŒ—æ¿€æ´», Headers å°†ä¸ä¸ºç©º; æ­¤æ—¶ï¼Œæˆ‘ä»¬åƒä¸‡ä¸å¯å†æ¬¡Navigate a,ä»è€Œå¯¼è‡´ä¸€ä¸ªæ— é™å¾ªç¯.
+Æä´ÎÄã±ØĞë¼ì²éÈ·ĞÅHeaders ²ÎÊıÊÇ¿Õ×Ö·û´®ÒÔ±ÜÃâÎŞÏŞÑ­»·.¼Ç×¡BeforeNavigate2 Ã¿Ò»´Îµ¼º½¶¼»á·¢Éú.Òò´ËÈç¹ûÄãÔÚBeforeNavigate2 ÊÂ¼ş´¦ÀíÖĞµ÷ÓÃNavigate , ÁíÍâÒ»´Î BeforeNavigate2 ½«±»¼¤»î. ÔÚÇ°ÃæµÄ´úÂëÖĞ, ½ö½öÔÚHeaders ²ÎÊıÎª¿Õ²Åµ÷ÓÃNavigate ±ÜÃâÁËÎŞÏŞÑ­»·. Èç¹ûHeaders ²ÎÊıÊÇ¿Õ, Navigate ½«Ğ¯´ø·Ç¿ÕµÄ Headers ²ÎÊı. ÏÂÒ»´ÎBeforeNavigate2 ±±¼¤»î, Headers ½«²»Îª¿Õ; ´ËÊ±£¬ÎÒÃÇÇ§Íò²»¿ÉÔÙ´ÎNavigate a,´Ó¶øµ¼ÖÂÒ»¸öÎŞÏŞÑ­»·.
 
-ç¬¬ä¸‰ç‚¹ä½ å¿…é¡»è°ƒç”¨pDisp çš„Stop æ–¹æ³•.å¦‚æœä½ æ²¡åšåˆ°è¿™ç‚¹ï¼Œ"about:NavigationCanceled" Web é¡µå°†ä¼šè½½ä½ é¦–æ¬¡å–æ¶ˆæ‰å¯¼èˆªæ—¶è¢«æ˜¾ç¤º.
+µÚÈıµãÄã±ØĞëµ÷ÓÃpDisp µÄStop ·½·¨.Èç¹ûÄãÃ»×öµ½Õâµã£¬"about:NavigationCanceled" Web Ò³½«»áÔØÄãÊ×´ÎÈ¡Ïûµôµ¼º½Ê±±»ÏÔÊ¾.
 
 CommandStateChange
-CommandStateChange æ˜¯å½“Internet Explorer æƒ³é€šçŸ¥ä¸€ä¸ªåº”ç”¨ç¨‹åºWebBrowser å‘½ä»¤çŠ¶æ€å·²ç»æ”¹å˜æ—¶æ¿€å‘.å½“æ£€æµ‹åˆ°Forwardå’ŒBack èœå•é¡¹å’ŒæŒ‰é’®ç¦æ­¢æˆ–è€…ä½¿èƒ½æ—¶æ¿€å‘æ­¤äº‹ä»¶.
+CommandStateChange ÊÇµ±Internet Explorer ÏëÍ¨ÖªÒ»¸öÓ¦ÓÃ³ÌĞòWebBrowser ÃüÁî×´Ì¬ÒÑ¾­¸Ä±äÊ±¼¤·¢.µ±¼ì²âµ½ForwardºÍBack ²Ëµ¥ÏîºÍ°´Å¥½ûÖ¹»òÕßÊ¹ÄÜÊ±¼¤·¢´ËÊÂ¼ş.
 
-CommandStateChange äº‹ä»¶æœ‰2ä¸ªå‚æ•°, Command å’Œ Enableã€‚ Command è¾“å…¥å‚æ•°å°†è¦æ”¹å˜çŠ¶æ€çš„æŒ‰é’®çš„è¡¨ç¤ºç¬¦ï¼Œå¯ä»¥å–å€¼â€”CSC_NAVIGATEFORWARD å’Œ CSC_NAVIGATEBACKåˆ†åˆ«è¡¨ç¤ºæ˜¯ ForwardæŒ‰é’®é¡¹å’ŒBacké¡¹,æ¯æ¬¡å¯¼èˆªå‘ç”Ÿ, CommandStateChange äº‹ä»¶å‘ç”Ÿå¹¶å‘Šè¯‰ä½ Forward æˆ–è€… Back èœå•é¡¹ä»¥åŠæŒ‰é’®å°†ä½¿èƒ½æˆ–ç¦æ­¢. ä¸¾ä¾‹æ¥è¯´, å¦‚æœæ²¡æœ‰Webé¡µåœ¨å½“å‰å¯¼èˆªåå‘ç”Ÿ, Command çš„å€¼åº”è¯¥ä¸º CSC_NAVIGATEFORWARD , å¹¶ä¸”Enable å‚æ•°å°†ç­‰äºVARIANT_FALSE .
+CommandStateChange ÊÂ¼şÓĞ2¸ö²ÎÊı, Command ºÍ Enable¡£ Command ÊäÈë²ÎÊı½«Òª¸Ä±ä×´Ì¬µÄ°´Å¥µÄ±íÊ¾·û£¬¿ÉÒÔÈ¡Öµ¡ªCSC_NAVIGATEFORWARD ºÍ CSC_NAVIGATEBACK·Ö±ğ±íÊ¾ÊÇ Forward°´Å¥ÏîºÍBackÏî,Ã¿´Îµ¼º½·¢Éú, CommandStateChange ÊÂ¼ş·¢Éú²¢¸æËßÄãForward »òÕß Back ²Ëµ¥ÏîÒÔ¼°°´Å¥½«Ê¹ÄÜ»ò½ûÖ¹. ¾ÙÀıÀ´Ëµ, Èç¹ûÃ»ÓĞWebÒ³ÔÚµ±Ç°µ¼º½ºó·¢Éú, Command µÄÖµÓ¦¸ÃÎª CSC_NAVIGATEFORWARD , ²¢ÇÒEnable ²ÎÊı½«µÈÓÚVARIANT_FALSE .
 
-ç¬¬äºŒä¸ªå‚æ•°, Enable ,å¦‚æœå‘½ä»¤å¯ç”¨ï¼ˆä½¿èƒ½ï¼‰ åˆ™ä¸ºVARIANT_TRUEï¼Œå¦‚æœ ç¦æ­¢åˆ™å€¼ä¸ºVARIANT_FALSE .
+µÚ¶ş¸ö²ÎÊı, Enable ,Èç¹ûÃüÁî¿ÉÓÃ£¨Ê¹ÄÜ£© ÔòÎªVARIANT_TRUE£¬Èç¹û ½ûÖ¹ÔòÖµÎªVARIANT_FALSE .
 
-ä¸ºè¯´æ˜é—®é¢˜ï¼Œæˆ‘ä»¬çœ‹çœ‹ä»£ç ã€‚ä¸€ä¸‹ä»£ç ä¸ºå®šä¹‰äº‹ä»¶æ¥æ”¶çš„å®å£°æ˜ï¼š
+ÎªËµÃ÷ÎÊÌâ£¬ÎÒÃÇ¿´¿´´úÂë¡£Ò»ÏÂ´úÂëÎª¶¨ÒåÊÂ¼ş½ÓÊÕµÄºêÉùÃ÷£º
 
 // Event sink map declaration for WebBrowser 
 
@@ -187,15 +187,15 @@ OnCommandStateChange, VTS_I4 VTS_BOOL)
 
 END_EVENTSINK_MAP()
 
-é‡è¦çš„ä¸€ç‚¹æ˜¯è¦é€šè¿‡WebBrowseræ§ä»¶çš„Create æ–¹æ³•æ¥åˆ›å»º. ON_EVENTçš„ç¬¬äºŒä¸ªå‚æ•°ä¸ºä½ å®¿ä¸»çš„WebBrowseræ§ä»¶çš„IID.ä¹‹å‰çš„ä¾‹å­ä¸­æ˜¯NULL . ä½ å¿…é¡»ä¸ºwebbrowseræ§ä»¶å£°æ˜ä¸€ä¸ªID ä¸”ç”¨æ­¤ ID åˆ›å»ºå®ä¾‹.å¦‚æœä¸è¿™ä¹ˆåšï¼Œäº‹ä»¶å°†ä¸ä¼šæ­£ç¡®å·¥ä½œ.
+ÖØÒªµÄÒ»µãÊÇÒªÍ¨¹ıWebBrowser¿Ø¼şµÄCreate ·½·¨À´´´½¨. ON_EVENTµÄµÚ¶ş¸ö²ÎÊıÎªÄãËŞÖ÷µÄWebBrowser¿Ø¼şµÄIID.Ö®Ç°µÄÀı×ÓÖĞÊÇNULL . Äã±ØĞëÎªwebbrowser¿Ø¼şÉùÃ÷Ò»¸öID ÇÒÓÃ´Ë ID ´´½¨ÊµÀı.Èç¹û²»ÕâÃ´×ö£¬ÊÂ¼ş½«²»»áÕıÈ·¹¤×÷.
 
-ä½ å¯ä»¥åœ¨å·¥ç¨‹çš„ä»»ä½•æ–‡ä»¶å®šä¹‰æ­¤ID. (æ¨èåœ¨èµ„æºå¤´æ–‡ä»¶resource.h.) å› ä¸º æœ€å¤§çš„èµ„æºIdæ˜¯32,779 , æ‰€ä»¥ä½ å¯ä»¥å¦‚ä¸‹å®šä¹‰WebBrowser æ§ä»¶çš„ID:
+Äã¿ÉÒÔÔÚ¹¤³ÌµÄÈÎºÎÎÄ¼ş¶¨Òå´ËID. (ÍÆ¼öÔÚ×ÊÔ´Í·ÎÄ¼şresource.h.) ÒòÎª ×î´óµÄ×ÊÔ´IdÊÇ32,779 , ËùÒÔÄã¿ÉÒÔÈçÏÂ¶¨ÒåWebBrowser ¿Ø¼şµÄID:
 
 #define IDC_WEBBROWSER  
 
 35000
 
-æ­¤æ•°é«˜äºresource.hä¸­çš„ä»»ä½•èµ„æºID, å› æ­¤å¯ä»¥ç¡®ä¿¡ID æ•°å­—ä¸ä¼šåŒé‡‡ç”¨ClassWizardæ·»åŠ çš„IDå†²çª.ç°åœ¨å¯ä»¥é‡‡ç”¨ä½¿ç”¨IDçš„ Create æ–¹æ³•æ¥åˆ›å»ºWebBrowseræ§ä»¶:
+´ËÊı¸ßÓÚresource.hÖĞµÄÈÎºÎ×ÊÔ´ID, Òò´Ë¿ÉÒÔÈ·ĞÅID Êı×Ö²»»áÍ¬²ÉÓÃClassWizardÌí¼ÓµÄID³åÍ».ÏÖÔÚ¿ÉÒÔ²ÉÓÃÊ¹ÓÃIDµÄ Create ·½·¨À´´´½¨WebBrowser¿Ø¼ş:
 
 if (!m_webBrowser.Create(NULL, WS_CHILD|WS_VISIBLE,
 
@@ -205,11 +205,11 @@ CRect(), this, IDC_WEBBROWSER))
 return -1; 
 }
 
-ä¸‹ä¸€æ­¥å£°æ˜OnCommandStateChange æ–¹æ³•ï¼Œè¯¥æ–¹æ³•å°†åœ¨WebBrowseræ§ä»¶æ¿€å‘CommandStateChange äº‹ä»¶æ—¶è¢«è°ƒç”¨.å¯å£°æ˜ å¦‚ä¸‹:
+ÏÂÒ»²½ÉùÃ÷OnCommandStateChange ·½·¨£¬¸Ã·½·¨½«ÔÚWebBrowser¿Ø¼ş¼¤·¢CommandStateChange ÊÂ¼şÊ±±»µ÷ÓÃ.¿ÉÉùÃ÷ ÈçÏÂ:
 
 void OnCommandStateChange(long lCommand, BOOL bEnable);
 
-åœ¨ OnCommandStateChange æ–¹æ³•çš„æ˜¯ç°ä»£ç ä¸­, è®¾å®šè¡¨ç¤ºGo Forward æˆ–è€… Go Back æƒ³å¾—å¯¼èˆªèœå•é¡¹çš„æ•°æ®æˆå‘˜ä¸ºä½¿èƒ½æˆ–è€…ç¦æ­¢. è¯¥ä¹¦æ®æˆå‘˜å°†è¢«UPDATE_COMMAND_UI å¥æŸ„ä½¿ç”¨ã€‚ä»¥ä¸‹ä¸ºOnCommandStateChange æ–¹æ³•å®ç°:
+ÔÚ OnCommandStateChange ·½·¨µÄÊÇÏÖ´úÂëÖĞ, Éè¶¨±íÊ¾Go Forward »òÕß Go Back ÏëµÃµ¼º½²Ëµ¥ÏîµÄÊı¾İ³ÉÔ±ÎªÊ¹ÄÜ»òÕß½ûÖ¹. ¸ÃÊé¾İ³ÉÔ±½«±»UPDATE_COMMAND_UI ¾ä±úÊ¹ÓÃ¡£ÒÔÏÂÎªOnCommandStateChange ·½·¨ÊµÏÖ:
 
 void CMfcWebHostView::OnCommandStateChange(long lCommand, BOOL bEnable)
 
@@ -244,9 +244,9 @@ break;
 
 }
 
-å£°æ˜m_fForwardEnabled å’Œ m_fBackEnabled æ•°æ®å˜é‡ä¸ºä¿æŠ¤æˆå‘˜ï¼Œç±»å‹ä¸ºBOOL .åŒæ ·åœ¨æ„é€ å‡½æ•°ä¸­è°çš„äº›æ•°æ®æˆå‘˜ä¸ºTRUEã€‚ .
+ÉùÃ÷m_fForwardEnabled ºÍ m_fBackEnabled Êı¾İ±äÁ¿Îª±£»¤³ÉÔ±£¬ÀàĞÍÎªBOOL .Í¬ÑùÔÚ¹¹Ôìº¯ÊıÖĞË­µÄĞ©Êı¾İ³ÉÔ±ÎªTRUE¡£ .
 
-ç°åœ¨å½“Go Forwardå’ŒGo Backçš„èœå• UPDATE_COMMAND_UI è¢«å¤„ç†, ä½ å¯ä»¥ç›´æ¥è¿›è¡Œè®¾ç½®. ä¸‹ä¸ºç¤ºä¾‹ä»£ç :
+ÏÖÔÚµ±Go ForwardºÍGo BackµÄ²Ëµ¥ UPDATE_COMMAND_UI ±»´¦Àí, Äã¿ÉÒÔÖ±½Ó½øĞĞÉèÖÃ. ÏÂÎªÊ¾Àı´úÂë:
 
 void CMfcWebHostView::OnUpdateNavigateGoForward(CCmdUI* pCmdUI) 
 
@@ -261,17 +261,17 @@ pCmdUI->Enable(m_fBackEnabled);
 }
 
 DocumentComplete
-å½“ä¸€ä¸ªæ–‡æ¡£å®Œæ•´çš„å®Œæˆä¸‹è½½Internet Explorer æ¿€å‘DocumentComplete äº‹ä»¶. ä»…ä»…å½“æ­¤äº‹ä»¶æ¿€å‘å æ–‡æ¡£å¯¹è±¡æ‰å¯å®‰å…¨ä½¿ç”¨.åœ¨ä¸€ä¸ªæ— å¸§çš„Webé¡µæƒ…å½¢ä¸­æ–‡æ¡£å¯¹è±¡æ˜¯IHTMLDocument2 å¯¹è±¡, æˆ‘ä»¬ä»¥åä¼šè®¨è®º. å½“æ–‡æ¡£å¯¹è±¡å‡†å¤‡å¥½å¯ç”¨,ä»–çš„çŠ¶æ€ä¸ºREADYSTATE_COMPLETE .
+µ±Ò»¸öÎÄµµÍêÕûµÄÍê³ÉÏÂÔØInternet Explorer ¼¤·¢DocumentComplete ÊÂ¼ş. ½ö½öµ±´ËÊÂ¼ş¼¤·¢ºó ÎÄµµ¶ÔÏó²Å¿É°²È«Ê¹ÓÃ.ÔÚÒ»¸öÎŞÖ¡µÄWebÒ³ÇéĞÎÖĞÎÄµµ¶ÔÏóÊÇIHTMLDocument2 ¶ÔÏó, ÎÒÃÇÒÔºó»áÌÖÂÛ. µ±ÎÄµµ¶ÔÏó×¼±¸ºÃ¿ÉÓÃ,ËûµÄ×´Ì¬ÎªREADYSTATE_COMPLETE .
 
-å…³äº DocumentComplete äº‹ä»¶ä»¥è¥¿å‡»ç‚¹éœ€è¦æ³¨æ„:
+¹ØÓÚ DocumentComplete ÊÂ¼şÒÔÎ÷»÷µãĞèÒª×¢Òâ:
 
-Â·         åœ¨æ²¡æœ‰å¸§çš„webé¡µ, DocumentComplete äº‹ä»¶åœ¨ä¸‹è½½å®Œæˆåæ¿€å‘ä¸€æ¬¡.
+¡¤         ÔÚÃ»ÓĞÖ¡µÄwebÒ³, DocumentComplete ÊÂ¼şÔÚÏÂÔØÍê³Éºó¼¤·¢Ò»´Î.
 
-åœ¨å¤šå¸§çš„ web é¡µï¼Œæ­¤äº‹ä»¶æ¿€å‘å¤šæ¬¡ . å¹¶éæ¯ä¸€ä¸ªå¸§æ¿€å‘ä¸€ä¸ªäº‹ä»¶ , ä½†æ¯ä¸€ä¸ªå¸§æ¿€å‘ DownloadBegin äº‹ä»¶å°†ä¼šç›¸åº”æ¿€å‘ DocumentComplete äº‹ä»¶ .
-DocumentComplete åˆä¸€ä¸ªæŒ‡å‘ IDispatch çš„æŒ‡é’ˆå‚æ•° , è¯¥å‚æ•°æŒ‡å‘æ¿€å‘æ­¤äº‹ä»¶çš„çª—å£ . æ­¤çª—å£å¯ä»¥æ˜¯å¸§ä¸­çš„çª—å£
-é¡¶çº§å¸§åœ¨æ‰€æœ‰å­å¸§æ¿€å‘äº†å„è‡ªçš„ DocumentComplete äº‹ä»¶åæ¿€å‘è‡ªå·±çš„ DocumentComplete äº‹ä»¶ã€‚ å› æ­¤ , ï¼Œè¦çœ‹ä¸€ä¸ª web é¡µæ˜¯å¦å®Œæ•´ä¸‹è½½å®Œæˆ , ä½ éœ€è¦ä»è¯¥äº‹ä»¶çš„å¤„ç†å¥æŸ„ä¸­è·å–ç”±äº‹ä»¶äº§åœ°è¿‡æ¥çš„ IDispatch å‚æ•°çš„ IUnknown æ¥å£ã€‚ä¸‹ä¸€æ­¥ï¼Œæ¯”è¾ƒ IUnknown æ¥å£æ˜¯å¦æŒ‡å‘ä½ æ­£å®¿ä¸»çš„ WebBrowser æ§ä»¶æˆ–è€…è‡ªåŠ¨åŒ–çš„ IE çš„å®ä¾‹çš„ IUnknown æ¥å£ . å¦‚æœè¿™ä¸¤ä¸ªæŒ‡é’ˆç›¸åŒï¼Œè¿™æ„å‘³ç€å…¨éƒ¨ HTML, å›¾ç‰‡ images, æ§ä»¶ , ä»¥åŠè¯¸å¦‚æ­¤ç±»åœ¨é¡¶çº§å¸§æˆ–è€…å­å¸§çš„å…¨éƒ¨å¯¹è±¡å…ƒç´ éƒ½è¢«ä¸‹è½½äº† .
+ÔÚ¶àÖ¡µÄ web Ò³£¬´ËÊÂ¼ş¼¤·¢¶à´Î . ²¢·ÇÃ¿Ò»¸öÖ¡¼¤·¢Ò»¸öÊÂ¼ş , µ«Ã¿Ò»¸öÖ¡¼¤·¢ DownloadBegin ÊÂ¼ş½«»áÏàÓ¦¼¤·¢ DocumentComplete ÊÂ¼ş .
+DocumentComplete ÓÖÒ»¸öÖ¸Ïò IDispatch µÄÖ¸Õë²ÎÊı , ¸Ã²ÎÊıÖ¸Ïò¼¤·¢´ËÊÂ¼şµÄ´°¿Ú . ´Ë´°¿Ú¿ÉÒÔÊÇÖ¡ÖĞµÄ´°¿Ú
+¶¥¼¶Ö¡ÔÚËùÓĞ×ÓÖ¡¼¤·¢ÁË¸÷×ÔµÄ DocumentComplete ÊÂ¼şºó¼¤·¢×Ô¼ºµÄ DocumentComplete ÊÂ¼ş¡£ Òò´Ë , £¬Òª¿´Ò»¸ö web Ò³ÊÇ·ñÍêÕûÏÂÔØÍê³É , ÄãĞèÒª´Ó¸ÃÊÂ¼şµÄ´¦Àí¾ä±úÖĞ»ñÈ¡ÓÉÊÂ¼ş²úµØ¹ıÀ´µÄ IDispatch ²ÎÊıµÄ IUnknown ½Ó¿Ú¡£ÏÂÒ»²½£¬±È½Ï IUnknown ½Ó¿ÚÊÇ·ñÖ¸ÏòÄãÕıËŞÖ÷µÄ WebBrowser ¿Ø¼ş»òÕß×Ô¶¯»¯µÄ IE µÄÊµÀıµÄ IUnknown ½Ó¿Ú . Èç¹ûÕâÁ½¸öÖ¸ÕëÏàÍ¬£¬ÕâÒâÎ¶×ÅÈ«²¿ HTML, Í¼Æ¬ images, ¿Ø¼ş , ÒÔ¼°ÖîÈç´ËÀàÔÚ¶¥¼¶Ö¡»òÕß×ÓÖ¡µÄÈ«²¿¶ÔÏóÔªËØ¶¼±»ÏÂÔØÁË .
  
-VBä¸­å®ç°ä»¥ä¸Šå››ç‚¹åŠå…¶å®¹æ˜“.ä»…éœ€è¦æ£€æŸ¥å‘é€ç»™äº‹ä»¶çš„pDisp å‚æ•°äº‹ä¸€ä¸ªWebBrowser å¯¹è±¡. Visual Basicå°å¿ƒæ£€æŸ¥è¿™äº›å¯¹è±¡çš„ Iunknown å¦ä¸ºåŒä¸€ä¸ªå¯¹è±¡ .æ­¤å¤„ä¸ºVBä»£ç ï¼š:
+VBÖĞÊµÏÖÒÔÉÏËÄµã¼°ÆäÈİÒ×.½öĞèÒª¼ì²é·¢ËÍ¸øÊÂ¼şµÄpDisp ²ÎÊıÊÂÒ»¸öWebBrowser ¶ÔÏó. Visual BasicĞ¡ĞÄ¼ì²éÕâĞ©¶ÔÏóµÄ Iunknown ·ñÎªÍ¬Ò»¸ö¶ÔÏó .´Ë´¦ÎªVB´úÂë£º:
 
 Private Sub WebBrowser1_DocumentComplete(ByVal pDisp As Object,
 
@@ -285,18 +285,18 @@ End If
 
 End Sub
 
-å®ç°ä»¥ä¸Šå››ç‚¹åœ¨Visual C++ åº”ç”¨ç¨‹åºé‡Œè¾ƒå›°éš¾ä¸€ç‚¹,ä½†ä½ å¯ä»¥åšåˆ°! é¦–å…ˆåœ¨DocumentComplete äº‹ä»¶çš„å®ä¸­å¦‚ä¸‹å£°æ˜:
+ÊµÏÖÒÔÉÏËÄµãÔÚVisual C++ Ó¦ÓÃ³ÌĞòÀï½ÏÀ§ÄÑÒ»µã,µ«Äã¿ÉÒÔ×öµ½! Ê×ÏÈÔÚDocumentComplete ÊÂ¼şµÄºêÖĞÈçÏÂÉùÃ÷:
 
 ON_EVENT(CMfcWebHostView, IDC_WEBBROWSER, DISPID_DOCUMENTCOMPLETE,
 
 OnDocumentComplete, VTS_DISPATCH VTS_PVARIANT) 
 
 
-æ¥ä¸‹æ¥å£°æ˜OnDocumentComplete æ–¹æ³•ä½œä¸ºäº‹ä»¶å¤„ç†å¥æŸ„
+½ÓÏÂÀ´ÉùÃ÷OnDocumentComplete ·½·¨×÷ÎªÊÂ¼ş´¦Àí¾ä±ú
 
 void OnDocumentComplete(LPDISPATCH lpDispatch, VARIANT FAR* URL);
 
-æœ€å,å®ç°è¯¥æ–¹æ³•ä»¥æ£€æµ‹ æ˜¯å¦é¡µé¢å·²ç»ä¸‹è½½,æˆ‘ä»¬å¾—åˆ°æˆ‘ä»¬å®¿ä¸»æ§åˆ¶bBrowser æ§ä»¶çš„IUnknown . (æ³¨æ„æˆ‘ä»¬ä¸æ˜¯ç®€å•è·å–æŒ‡å‘ IUnknown ï¼Œè€Œæ˜¯è¦è°ƒç”¨GetControlUnknown æ–¹æ³•. GetControlUnknown æ–¹æ³•è¿”å›çš„IUnknown æŒ‡é’ˆ å®é™…ä¸Šå¹¶ä¸ç­‰äºè¢«å®¿ä¸»è¯çš„ WebBrowseræ§ä»¶çš„IUnknown . é‚£å°†è¿”å›IOleObject æ¥å£æŒ‡é’ˆ.) ä¸‹ä¸€æ­¥ï¼Œ è·å–IUnknown æŒ‡é’ˆï¼Œå¦‚æœQueryInterface æŸ¥è¯¢å¾—åˆ°çš„Dispatch å‚æ•°åŒIunknown æ¥å£æ˜¯åŒä¸€å¯¹è±¡,åˆ™é¡µé¢å®Œæˆæ•´ä¸ªä¸‹è½½ã€‚.
+×îºó,ÊµÏÖ¸Ã·½·¨ÒÔ¼ì²â ÊÇ·ñÒ³ÃæÒÑ¾­ÏÂÔØ,ÎÒÃÇµÃµ½ÎÒÃÇËŞÖ÷¿ØÖÆbBrowser ¿Ø¼şµÄIUnknown . (×¢ÒâÎÒÃÇ²»ÊÇ¼òµ¥»ñÈ¡Ö¸Ïò IUnknown £¬¶øÊÇÒªµ÷ÓÃGetControlUnknown ·½·¨. GetControlUnknown ·½·¨·µ»ØµÄIUnknown Ö¸Õë Êµ¼ÊÉÏ²¢²»µÈÓÚ±»ËŞÖ÷»°µÄ WebBrowser¿Ø¼şµÄIUnknown . ÄÇ½«·µ»ØIOleObject ½Ó¿ÚÖ¸Õë.) ÏÂÒ»²½£¬ »ñÈ¡IUnknown Ö¸Õë£¬Èç¹ûQueryInterface ²éÑ¯µÃµ½µÄDispatch ²ÎÊıÍ¬Iunknown ½Ó¿ÚÊÇÍ¬Ò»¶ÔÏó,ÔòÒ³ÃæÍê³ÉÕû¸öÏÂÔØ¡£.
 
 void CMfcWebHostView::OnDocumentComplete(LPDISPATCH lpDispatch,
 
@@ -378,31 +378,31 @@ if (lpUnknownDC)
 lpUnknownDC->Release();
 }
 }
-æœ‰ä¸€ç‚¹éœ€è¦æ³¨æ„ä¸Šé¢çš„ä»£ç æˆ‘ä»¬åœ¨GetControlUnknown è¿”å›çš„IUnknown æ¥å£æŒ‡é’ˆä½¿ç”¨æ—¶å¹¶æ²¡æœ‰è¿›è¡ŒRelease ,å› ä¸ºb IUnknown æŒ‡é’ˆå¹¶æ²¡æœ‰åœ¨GetControlUnknownæ–¹æ³•ä¸­ AddRef '. GetControlUnknown æ–¹æ³•ä»…ä»…è¿”å›ä¸€ä¸ªIOleObject æ•°æ®æˆå‘˜çš„æŒ‡é’ˆï¼Œè¯¥æŒ‡é’ˆç”±æ§ä»¶ç«™ç‚¹ç±»â€”CcontrolSite æ“çºµå¤„ç†. å¦‚æœä½ é‡Šæ”¾äº†IUnknown æ¥å£æŒ‡é’ˆ, è½½ä½ å…³é—­åº”ç”¨ç¨‹åºæ—¶,ä¸€ä¸ªè®¿é—®è¿ä¾‹å°†ä¼šå‘ç”Ÿï¼Œå› ä¸ºMFC å°†è¯•å›¾åœ¨å¯¹è±¡è¢«åˆ é™¤æ—¶å€™å¤šé‡Šæ”¾ä¸€æ¬¡.
+ÓĞÒ»µãĞèÒª×¢ÒâÉÏÃæµÄ´úÂëÎÒÃÇÔÚGetControlUnknown ·µ»ØµÄIUnknown ½Ó¿ÚÖ¸ÕëÊ¹ÓÃÊ±²¢Ã»ÓĞ½øĞĞRelease ,ÒòÎªb IUnknown Ö¸Õë²¢Ã»ÓĞÔÚGetControlUnknown·½·¨ÖĞ AddRef '. GetControlUnknown ·½·¨½ö½ö·µ»ØÒ»¸öIOleObject Êı¾İ³ÉÔ±µÄÖ¸Õë£¬¸ÃÖ¸ÕëÓÉ¿Ø¼şÕ¾µãÀà¡ªCcontrolSite ²Ù×İ´¦Àí. Èç¹ûÄãÊÍ·ÅÁËIUnknown ½Ó¿ÚÖ¸Õë, ÔØÄã¹Ø±ÕÓ¦ÓÃ³ÌĞòÊ±,Ò»¸ö·ÃÎÊÎ¥Àı½«»á·¢Éú£¬ÒòÎªMFC ½«ÊÔÍ¼ÔÚ¶ÔÏó±»É¾³ıÊ±ºò¶àÊÍ·ÅÒ»´Î.
 
 DownloadBegin
-DownloadBegin äº‹ä»¶é€šçŸ¥åº”ç”¨ç¨‹åºä¸€ä¸ªå¯¼èˆªæ“ä½œå¼€å§‹. ä¸€èˆ¬æƒ…å†µä¸‹è¯¥äº‹ä»¶åœ¨BeforeNavigate2 äº‹ä»¶ä¹‹åæ¿€å‘, é™¤éå¯¼èˆªæ“ä½œåœ¨BeforeNavigate2 äº‹ä»¶å¤„ç†è¿‡ç¨‹ä¸­è¢«å–æ¶ˆ.å®¹å™¨åº”å½“æ˜¾ç¤ºåŠ¨ç”»æˆ–è€…å¿™æŒ‡ç¤ºå½“å‰æ­£å¤„äºè¿æ¥çš„DownloadBegin äº‹ä»¶. æ¯ä¸€ä¸ª DownloadBegin äº‹ä»¶æœ‰ä¸€ä¸ªç›¸åº”çš„DownloadComplete äº‹ä»¶. åœ¨åˆ·æ–°é¡µé¢çš„æƒ…å½¢ä¸­, DownloadBegin å’Œ DownloadComplete ä½¿å”¯ä¸€çš„è¢«æ¿€å‘çš„å¯¼èˆªäº‹ä»¶.
+DownloadBegin ÊÂ¼şÍ¨ÖªÓ¦ÓÃ³ÌĞòÒ»¸öµ¼º½²Ù×÷¿ªÊ¼. Ò»°ãÇé¿öÏÂ¸ÃÊÂ¼şÔÚBeforeNavigate2 ÊÂ¼şÖ®ºó¼¤·¢, ³ı·Çµ¼º½²Ù×÷ÔÚBeforeNavigate2 ÊÂ¼ş´¦Àí¹ı³ÌÖĞ±»È¡Ïû.ÈİÆ÷Ó¦µ±ÏÔÊ¾¶¯»­»òÕßÃ¦Ö¸Ê¾µ±Ç°Õı´¦ÓÚÁ¬½ÓµÄDownloadBegin ÊÂ¼ş. Ã¿Ò»¸ö DownloadBegin ÊÂ¼şÓĞÒ»¸öÏàÓ¦µÄDownloadComplete ÊÂ¼ş. ÔÚË¢ĞÂÒ³ÃæµÄÇéĞÎÖĞ, DownloadBegin ºÍ DownloadComplete Ê¹Î¨Ò»µÄ±»¼¤·¢µÄµ¼º½ÊÂ¼ş.
 
 DownloadComplete
-DownloadComplete åœ¨ä¸€ä¸ªå¯¼èˆªæ“ä½œå®Œæˆæ—¶å€™å‘ç”Ÿ, åœæ­¢, æˆ–è€…å¤±è´¥. ä¸åƒ NavigateComplete2 ä»…ä»…å½“æˆåŠŸå¯¼èˆªæ‰å‘ç”Ÿ, DownloadComplete æ€»æ˜¯åœ¨é“æ¶µå¼€å§‹åæ¿€å‘.ä»»ä½•åœ¨DownloadBegin ä¸­æ˜¾ç¤ºçš„åŠ¨ç”»æˆ–è€…å¿™æŒ‡ç¤ºå°†ä¼šåœ¨DownloadComplete ä¸­åœæ­¢.
+DownloadComplete ÔÚÒ»¸öµ¼º½²Ù×÷Íê³ÉÊ±ºò·¢Éú, Í£Ö¹, »òÕßÊ§°Ü. ²»Ïñ NavigateComplete2 ½ö½öµ±³É¹¦µ¼º½²Å·¢Éú, DownloadComplete ×ÜÊÇÔÚµÀº­¿ªÊ¼ºó¼¤·¢.ÈÎºÎÔÚDownloadBegin ÖĞÏÔÊ¾µÄ¶¯»­»òÕßÃ¦Ö¸Ê¾½«»áÔÚDownloadComplete ÖĞÍ£Ö¹.
 
 NavigateComplete2
-NavigateComplete2 äº‹ä»¶åœ¨å¯¼èˆªåˆ°ä¸€ä¸ªè¶…è¿æ¥æ•´ä¸ªçª—å£æˆ–è€…å¸§é›†åˆçš„å…ƒç´ å…¨éƒ¨å®Œæˆæ—¶å€™å‘ç”Ÿ. ç¬¬ä¸€æ­¤äº‹ä»¶å‘ç”Ÿè¡¨ç¤ºæ–‡æ¡£documentå·²ç»å‡†å¤‡å¥½.åœ¨æ­¤äº‹ä»¶å‘ç”Ÿå, ä½ å¯ä»¥é€šè¿‡Document å±æ€§å­˜å–æ–‡æ¡£ï¼ˆdocumentï¼‰è€Œä¸æ¥æ”¶åˆ°é”™è¯¯.ä½†æ˜¯èƒ½å¤Ÿè®¿é—®ä¸€ä¸ªæ–‡æ¡£ä¸æ„å‘³ç€ä½ è®¿é—®æ–‡æ¡£ä½¿å®‰å…¨çš„.ä½ å¯ä»¥åœ¨DocumentComplete äº‹ä»¶æ¿€å‘åå®‰å…¨è®¿é—®æ–‡æ¡£.
+NavigateComplete2 ÊÂ¼şÔÚµ¼º½µ½Ò»¸ö³¬Á¬½ÓÕû¸ö´°¿Ú»òÕßÖ¡¼¯ºÏµÄÔªËØÈ«²¿Íê³ÉÊ±ºò·¢Éú. µÚÒ»´ËÊÂ¼ş·¢Éú±íÊ¾ÎÄµµdocumentÒÑ¾­×¼±¸ºÃ.ÔÚ´ËÊÂ¼ş·¢Éúºó, Äã¿ÉÒÔÍ¨¹ıDocument ÊôĞÔ´æÈ¡ÎÄµµ£¨document£©¶ø²»½ÓÊÕµ½´íÎó.µ«ÊÇÄÜ¹»·ÃÎÊÒ»¸öÎÄµµ²»ÒâÎ¶×ÅÄã·ÃÎÊÎÄµµÊ¹°²È«µÄ.Äã¿ÉÒÔÔÚDocumentComplete ÊÂ¼ş¼¤·¢ºó°²È«·ÃÎÊÎÄµµ.
 
-æ¡£ä½ éœ€è¦è®¿é—®documentå¯¹è±¡ä½†æ˜¯ä¸éœ€è¦è®¿é—®æ–‡æ¡£å†…çš„å…ƒç´ ï¼Œä½ å¯ä»¥åœ¨NavigateComplete2 äº‹ä»¶ä¸­å°½å¯èƒ½å¿«çš„å¤„ç†,ä¾‹å¦‚å½“ä½ åœ¨æ–‡æ‰“å·¥é€šè¿‡é«˜çº§å®¿ä¸»æ¥å£. NavigateComplete2 äº‹ä»¶æœ‰2ä¸ªå‚æ•°â€”IDispatch of ä»£è¡¨æ¿€å‘äº‹ä»¶çš„å¯¹è±¡URL ä¸ºä½ éœ€è¦å¯¼èˆªåˆ°çš„URL.
+µµÄãĞèÒª·ÃÎÊdocument¶ÔÏóµ«ÊÇ²»ĞèÒª·ÃÎÊÎÄµµÄÚµÄÔªËØ£¬Äã¿ÉÒÔÔÚNavigateComplete2 ÊÂ¼şÖĞ¾¡¿ÉÄÜ¿ìµÄ´¦Àí,ÀıÈçµ±ÄãÔÚÎÄ´ò¹¤Í¨¹ı¸ß¼¶ËŞÖ÷½Ó¿Ú. NavigateComplete2 ÊÂ¼şÓĞ2¸ö²ÎÊı¡ªIDispatch of ´ú±í¼¤·¢ÊÂ¼şµÄ¶ÔÏóURL ÎªÄãĞèÒªµ¼º½µ½µÄURL.
 
 NewWindow2
-NewWindow2 æ¡£ç”¨æˆ·æ˜¾ç¤ºä¸€ä¸ªæ–°çª—å£ä»¥è¿›è¡Œæ–°å¯¼èˆªæ˜¾ç¤ºwebé¡µæˆ–è€…å…¶ä»–èµ„æºæ—¶å‘ç”Ÿ.åœ¨WebBrowseræ§ä»¶å“åº”æŸ„è¿›è¡Œé¢„å¤„ç† (ä¸¾ä¾‹æ¥è¯´, åœ¨å“åº”window .open æ–¹æ³•).
+NewWindow2 µµÓÃ»§ÏÔÊ¾Ò»¸öĞÂ´°¿ÚÒÔ½øĞĞĞÂµ¼º½ÏÔÊ¾webÒ³»òÕßÆäËû×ÊÔ´Ê±·¢Éú.ÔÚWebBrowser¿Ø¼şÏìÓ¦±ú½øĞĞÔ¤´¦Àí (¾ÙÀıÀ´Ëµ, ÔÚÏìÓ¦window .open ·½·¨).
 
-NewWindow2 ä¹Ÿåœ¨Navigate æˆ–è€… Navigate2 æ–¹æ³•è¢«è°ƒç”¨ä¸”navOpenInNewWindow æ ‡å¿—è¢«è®¾å®šæ—¶å‘ç”Ÿ. æ¡£é‡‡ç”¨æ–‡ä»¶èœå•ä¸­çš„New WindowæŒ‰é’®æ—¶å¹¶ä¸å‘ç”Ÿ(Internet Explorerå¸§ä¸æ˜¯ä¸€ä¸ª HTML å¸§; å®ƒæ˜¯å¸§çª—å£.) å› æ­¤, WebBrowser å¯¹è±¡ä¸çŸ¥é“ä»€ä¹ˆæ—¶å€™æ–°çª—å£å°†è¢«æ‰“å¼€. å› ä¸º NewWindow2 æœ‰æ—¶å€™å¾ˆéš¾ä½¿ç”¨, æ‰€ä»¥æˆ‘ä»¬æ¥æ£€æŸ¥å®ƒçš„ä¸¤ä¸ªå‚æ•°: ppDisp and Cancel.
+NewWindow2 Ò²ÔÚNavigate »òÕß Navigate2 ·½·¨±»µ÷ÓÃÇÒnavOpenInNewWindow ±êÖ¾±»Éè¶¨Ê±·¢Éú. µµ²ÉÓÃÎÄ¼ş²Ëµ¥ÖĞµÄNew Window°´Å¥Ê±²¢²»·¢Éú(Internet ExplorerÖ¡²»ÊÇÒ»¸ö HTML Ö¡; ËüÊÇÖ¡´°¿Ú.) Òò´Ë, WebBrowser ¶ÔÏó²»ÖªµÀÊ²Ã´Ê±ºòĞÂ´°¿Ú½«±»´ò¿ª. ÒòÎª NewWindow2 ÓĞÊ±ºòºÜÄÑÊ¹ÓÃ, ËùÒÔÎÒÃÇÀ´¼ì²éËüµÄÁ½¸ö²ÎÊı: ppDisp and Cancel.
 
-ppDisp å‚æ•°æ˜¯æ¥å£æŒ‡é’ˆ, ä¸€èˆ¬æ˜¯æ¥æ”¶æ–°WebBrowser æˆ–è€… InternetExplorer å¯¹è±¡çš„IDispatch æ¥å£æŒ‡é’ˆ, æ˜¯ä½ èƒ½å¤Ÿåˆ›å»ºä¸€ä¸ªInternet Exploreræ–°å®ä¾‹ä»¥ä¾¿èƒ½å¤Ÿæ§åˆ¶æ¥è‡ªä½ çš„åº”ç”¨ç¨‹åºå¯¼èˆªäº§ç”Ÿçš„æ–°çª—å£. è¯¥å®ä¾‹å¼€å§‹ä¸ºæ–°å»ºçš„, éšè—çš„, ï¼ˆæš‚æ—¶ï¼‰ä¸å¯å¯¼èˆªWebBrowser æˆ–è€… InternetExplorer å¯¹è±¡. åœ¨NewWindow2äº‹ä»¶å¥æŸ„å‡½æ•°è¿”å›ä¹‹å‰, InternetExplorer å¯¹è±¡æ¿€å‘NewWindow2 äº‹ä»¶å°†é…ç½®æ–°WebBrowserå¯¹è±¡çš„å¯¼èˆªç›®æ ‡ä½ç½®.
+ppDisp ²ÎÊıÊÇ½Ó¿ÚÖ¸Õë, Ò»°ãÊÇ½ÓÊÕĞÂWebBrowser »òÕß InternetExplorer ¶ÔÏóµÄIDispatch ½Ó¿ÚÖ¸Õë, ÊÇÄãÄÜ¹»´´½¨Ò»¸öInternet ExplorerĞÂÊµÀıÒÔ±ãÄÜ¹»¿ØÖÆÀ´×ÔÄãµÄÓ¦ÓÃ³ÌĞòµ¼º½²úÉúµÄĞÂ´°¿Ú. ¸ÃÊµÀı¿ªÊ¼ÎªĞÂ½¨µÄ, Òş²ØµÄ, £¨ÔİÊ±£©²»¿Éµ¼º½WebBrowser »òÕß InternetExplorer ¶ÔÏó. ÔÚNewWindow2ÊÂ¼ş¾ä±úº¯Êı·µ»ØÖ®Ç°, InternetExplorer ¶ÔÏó¼¤·¢NewWindow2 ÊÂ¼ş½«ÅäÖÃĞÂWebBrowser¶ÔÏóµÄµ¼º½Ä¿±êÎ»ÖÃ.
 
-å¦å¤–å‚æ•°, Cancel , æ—¶å–æ¶ˆ(Cancel)æ ‡å¿—çš„åœ°å€. åº”ç”¨ç¨‹åºèƒ½å¤Ÿè®¾å®šæ­¤å‚æ•°ä¸ºTRUE ä»¥å–æ¶ˆå¯¼èˆªæ“ä½œæˆ–è€…è®¾å®šä¸ºFALSE ä»¥å…è®¸æ–°å»ºçª—å£æ“ä½œ. è®¾å®šCancel ä¸º TRUE å®Œå…¨å–æ¶ˆæ–°å»ºçª—å£æ“ä½œå’Œå¯¼èˆª.
+ÁíÍâ²ÎÊı, Cancel , Ê±È¡Ïû(Cancel)±êÖ¾µÄµØÖ·. Ó¦ÓÃ³ÌĞòÄÜ¹»Éè¶¨´Ë²ÎÊıÎªTRUE ÒÔÈ¡Ïûµ¼º½²Ù×÷»òÕßÉè¶¨ÎªFALSE ÒÔÔÊĞíĞÂ½¨´°¿Ú²Ù×÷. Éè¶¨Cancel Îª TRUE ÍêÈ«È¡ÏûĞÂ½¨´°¿Ú²Ù×÷ºÍµ¼º½.
 
-å¦‚æœä½ ä¸åœ¨NewWindow2 äº‹ä»¶å¤„ç†è¿‡ç¨‹ä¸­ä½œä»»ä½•äº‹, æ–°çš„ InternetExplorer å¯¹è±¡å°†è‡ªåŠ¨å»ºç«‹. ä¸€äº›åŸå› ä½ æƒ³æ§åˆ¶NewWindow2 äº‹ä»¶ä»¥ä¾¿æ§åˆ¶æ–°å»ºInternetExplorer å¯¹è±¡. ä¸ºä»€ä¹ˆ? å› ä¸ºä½ æƒ³é™åˆ¶Internet Explorerçš„å®ä¾‹æ•°é‡,æˆ–è€…ä½ æƒ³æ§åˆ¶åˆ›å»ºçš„å®ä¾‹çš„äº‹ä»¶.
+Èç¹ûÄã²»ÔÚNewWindow2 ÊÂ¼ş´¦Àí¹ı³ÌÖĞ×÷ÈÎºÎÊÂ, ĞÂµÄ InternetExplorer ¶ÔÏó½«×Ô¶¯½¨Á¢. Ò»Ğ©Ô­ÒòÄãÏë¿ØÖÆNewWindow2 ÊÂ¼şÒÔ±ã¿ØÖÆĞÂ½¨InternetExplorer ¶ÔÏó. ÎªÊ²Ã´? ÒòÎªÄãÏëÏŞÖÆInternet ExplorerµÄÊµÀıÊıÁ¿,»òÕßÄãÏë¿ØÖÆ´´½¨µÄÊµÀıµÄÊÂ¼ş.
 
-ä»¥ä¸‹ NewWindow2 äº‹ä»¶æ§åˆ¶å‡½æ•°ä¸­; å»ºç«‹äº†ä¸€ä¸ªæ–°çš„, éšè—çš„, ä¸å¯å¯¼èˆªçš„Internet Explorerå®ä¾‹ï¼› å¹¶ä¸”è®¾å®šppDisp å‚æ•°æŒ‡å‘æ–°å®ä¾‹.å¦‚æœä½ æƒ³ï¼Œä½ å¯ä»¥åŠ å…¥ä»»ä½•æ¥æ”¶æ–°å®ä¾‹äº‹ä»¶çš„ä»£ç .
+ÒÔÏÂ NewWindow2 ÊÂ¼ş¿ØÖÆº¯ÊıÖĞ; ½¨Á¢ÁËÒ»¸öĞÂµÄ, Òş²ØµÄ, ²»¿Éµ¼º½µÄInternet ExplorerÊµÀı£» ²¢ÇÒÉè¶¨ppDisp ²ÎÊıÖ¸ÏòĞÂÊµÀı.Èç¹ûÄãÏë£¬Äã¿ÉÒÔ¼ÓÈëÈÎºÎ½ÓÊÕĞÂÊµÀıÊÂ¼şµÄ´úÂë.
 
 void CMyEvtSink::NewWindow2(LPDISPATCH* ppDisp, BOOL* Cancel)
 {
@@ -424,9 +424,9 @@ if (hr == S_OK)
 
 }
 
-å¦å¤–çš„åŸå› æ§åˆ¶NewWindow2 äº‹ä»¶æ˜¯ç”±äºä½ æƒ³ä½ åº”ç”¨ç¨‹åºåœ¨ç”¨æˆ·é€‰æ‹©åœ¨æ–°çª—å£æ‰“å¼€ä¸€ä¸ªurlæ—¶è¿›è¡Œæ§åˆ¶. å¦‚æœä½ ä¸è¿›è¡Œæ§åˆ¶NewWindow2 äº‹ä»¶, Internet Explorer æ–°å®ä¾‹å°†è¢«åˆ›å»º.
+ÁíÍâµÄÔ­Òò¿ØÖÆNewWindow2 ÊÂ¼şÊÇÓÉÓÚÄãÏëÄãÓ¦ÓÃ³ÌĞòÔÚÓÃ»§Ñ¡ÔñÔÚĞÂ´°¿Ú´ò¿ªÒ»¸öurlÊ±½øĞĞ¿ØÖÆ. Èç¹ûÄã²»½øĞĞ¿ØÖÆNewWindow2 ÊÂ¼ş, Internet Explorer ĞÂÊµÀı½«±»´´½¨.
 
-ä»¥ä¸‹ä¸ºæ§åˆ¶æ–°å»ºçª—å£çš„vbä»£ç :
+ÒÔÏÂÎª¿ØÖÆĞÂ½¨´°¿ÚµÄvb´úÂë:
 
 Private Sub WebBrowser1_NewWindow2(ppDisp As Object, Cancel As Boolean)
 
@@ -442,19 +442,19 @@ Set frmWB = Nothing
 
 End Sub
 
-åœ¨æ­¤NewWindow2 äº‹ä»¶ä»£ç ä¸­,æ¡£ä¸€ä¸ªæ–°å¸¸å£éœ€è¦è¢«åˆ›å»º, æˆ‘ä»¬å»ºç«‹ä¸€ä¸ªæ–°çš„å½“å‰çª—ä½“Form1 çš„æ‹·è´. åœ¨æ­¤è¡¨å•çª—ä½“, ç›¸å½“äºInternet Explorerçš„æ–°å®ä¾‹,å°†å¤„ç†å¯¼èˆª.
+ÔÚ´ËNewWindow2 ÊÂ¼ş´úÂëÖĞ,µµÒ»¸öĞÂ³£¿ÚĞèÒª±»´´½¨, ÎÒÃÇ½¨Á¢Ò»¸öĞÂµÄµ±Ç°´°ÌåForm1 µÄ¿½±´. ÔÚ´Ë±íµ¥´°Ìå, Ïàµ±ÓÚInternet ExplorerµÄĞÂÊµÀı,½«´¦Àíµ¼º½.
 
-åœ¨mfcä¸­æˆ‘ä»¬éœ€è¦é¦–å…ˆåŠ å…¥NewWindow2 äº‹ä»¶çš„æ˜ å°„æ¡ç›®åˆ°è§†å›¾ç±»çš„äº‹ä»¶æ˜ å°„å®. (ä¸è¦å¿˜è®°åŒ…å« ExDispID.h in, é‚£é‡Œæœ‰DISPID_NEWWINDOW2 å®šä¹‰.)
+ÔÚmfcÖĞÎÒÃÇĞèÒªÊ×ÏÈ¼ÓÈëNewWindow2 ÊÂ¼şµÄÓ³ÉäÌõÄ¿µ½ÊÓÍ¼ÀàµÄÊÂ¼şÓ³Éäºê. (²»ÒªÍü¼Ç°üº¬ ExDispID.h in, ÄÇÀïÓĞDISPID_NEWWINDOW2 ¶¨Òå.)
 
 ON_EVENT(CMfcWebHostView, IDC_WEBBROWSER, DISPID_NEWWINDOW2,
 
 OnNewWindow2, VTS_PDISPATCH VTS_PBOOL)
 
-ä¸‹ä¸€æ­¥å£°æ˜OnNewWindow2 æ–¹æ³•:
+ÏÂÒ»²½ÉùÃ÷OnNewWindow2 ·½·¨:
 
 void OnNewWindow2(LPDISPATCH* ppDisp, BOOL* Cancel);
 
-æœ€åå®ç°OnNewWindow2 æ–¹æ³•ä»¥åˆ›å»ºä¸€ä¸ªæ–°çš„MfcWebHostçª—å£å®ä¾‹:
+×îºóÊµÏÖOnNewWindow2 ·½·¨ÒÔ´´½¨Ò»¸öĞÂµÄMfcWebHost´°¿ÚÊµÀı:
 
 void CMfcWebHostView::OnNewWindow2(LPDISPATCH FAR* ppDisp,
 
@@ -526,7 +526,7 @@ ASSERT(pWbView);
 
 }
 
-å¦‚æœä½ åœ¨sidæˆ–è€…mdiåº”ç”¨ç¨‹åºä¸­æ§åˆ¶ä¸€ä¸ªWebBrowseræ§ä»¶,å®ç°OnNewWindow2 æ–¹æ³•æ˜¯å¤æ‚çš„ä¸”éœ€è¦çŸ¥é“å¦‚ä½•è§£å†³åŒæ–‡æ¡£æ¨¡ç‰ˆå¦‚ä½•å·¥ä½œ. æˆ–è®¸, å¦‚æœä½ åœ¨ä¸€ä¸ªç»™äºˆå¯¹è¯æ¡†çš„åº”ç”¨ç¨‹åºæ§åˆ¶ä¸€ä¸ªWebBrowseræ§ä»¶æ˜¯è¾ƒä¸ºå®¹æ˜“çš„.æ­¤å¤„ä¸ºç¤ºä¾‹ï¼š
+Èç¹ûÄãÔÚsid»òÕßmdiÓ¦ÓÃ³ÌĞòÖĞ¿ØÖÆÒ»¸öWebBrowser¿Ø¼ş,ÊµÏÖOnNewWindow2 ·½·¨ÊÇ¸´ÔÓµÄÇÒĞèÒªÖªµÀÈçºÎ½â¾öÍ¬ÎÄµµÄ£°æÈçºÎ¹¤×÷. »òĞí, Èç¹ûÄãÔÚÒ»¸ö¸øÓè¶Ô»°¿òµÄÓ¦ÓÃ³ÌĞò¿ØÖÆÒ»¸öWebBrowser¿Ø¼şÊÇ½ÏÎªÈİÒ×µÄ.´Ë´¦ÎªÊ¾Àı£º
 
 void CMyDlg::OnNewWindow2(LPDISPATCH FAR* ppDisp, BOOL FAR* Cancel) 
 {
@@ -538,17 +538,17 @@ m_dlgNewWB->Create(IDD_MYDLG_DIALOG);
 
 }
 
-è®°ä½å½“ä½ å®Œæˆæ‰“å¼€çš„æ–°å¯¹è¯æ¡†ååˆ é™¤ï¼ˆdeleteï¼‰ m_dlgNewWB . ä¸”ä¸è¦åœ¨CMyDlg::OnInitDialog æ–¹æ³•ä¸­å¯¼èˆª, å› ä¸ºè¿™æ ·ä»£ç å°†ä¸ä¼šå·¥ä½œ.
+¼Ç×¡µ±ÄãÍê³É´ò¿ªµÄĞÂ¶Ô»°¿òºóÉ¾³ı£¨delete£© m_dlgNewWB . ÇÒ²»ÒªÔÚCMyDlg::OnInitDialog ·½·¨ÖĞµ¼º½, ÒòÎªÕâÑù´úÂë½«²»»á¹¤×÷.
 
 ProgressChange
-ProgressChange äº‹ä»¶é€šå‘Šä½ çš„åº”ç”¨ç¨‹åºä¸‹åœ¨æ“ä½œçŠ¶æ€å·²ç»æ›´æ–°. ProgressChange æœ‰ä¸¤ä¸ªå‚æ•°:
+ProgressChange ÊÂ¼şÍ¨¸æÄãµÄÓ¦ÓÃ³ÌĞòÏÂÔÚ²Ù×÷×´Ì¬ÒÑ¾­¸üĞÂ. ProgressChange ÓĞÁ½¸ö²ÎÊı:
 
-Â·         Progress. æ€»è®¡æœ‰å¤šå°‘è¿›åº¦å°†è¢«å±•ç¤º, å¦‚æœä¸º-1 è¡¨ç¤ºæ•´ä¸ªè¿›åº¦å·²ç»å®Œæˆ
+¡¤         Progress. ×Ü¼ÆÓĞ¶àÉÙ½ø¶È½«±»Õ¹Ê¾, Èç¹ûÎª-1 ±íÊ¾Õû¸ö½ø¶ÈÒÑ¾­Íê³É
 
-ProgressMax. æœ€å¤§è¿›åº¦å€¼
-å®¹å™¨å¯é€šè¿‡æ­¤äº‹ä»¶æ˜¾ç¤ºä¸‹è½½è¿›åº¦ã€‚
+ProgressMax. ×î´ó½ø¶ÈÖµ
+ÈİÆ÷¿ÉÍ¨¹ı´ËÊÂ¼şÏÔÊ¾ÏÂÔØ½ø¶È¡£
  
-äº‹ä»¶å‘ç”Ÿåºåˆ—
-ä¸‹å›¾å±•ç¤ºäº†IEçš„äº‹ä»¶å‘ç”Ÿåºåˆ—.ä½†è¿™ä»…ä»…ä¸ºä¸åŒ…å«å¸§çš„æ™®é€šç½‘é¡µæµè§ˆ. (æ²¡æœ‰åŒ…å«è¯¸å¦‚ ProgressChange , CommandStateChange , OnToolBar , ç­‰ç­‰äº‹ä»¶.)ä¸æ˜¯æ‰€æœ‰äº‹ä»¶éƒ½ä¼šè¢«æ¿€å‘. ä½†æ˜¯ BeforeNavigate2 å’ŒDocumentComplete æ¯æ¬¡æµè§ˆéƒ½ä¼šè¢«æ¿€å‘.
+ÊÂ¼ş·¢ÉúĞòÁĞ
+ÏÂÍ¼Õ¹Ê¾ÁËIEµÄÊÂ¼ş·¢ÉúĞòÁĞ.µ«Õâ½ö½öÎª²»°üº¬Ö¡µÄÆÕÍ¨ÍøÒ³ä¯ÀÀ. (Ã»ÓĞ°üº¬ÖîÈç ProgressChange , CommandStateChange , OnToolBar , µÈµÈÊÂ¼ş.)²»ÊÇËùÓĞÊÂ¼ş¶¼»á±»¼¤·¢. µ«ÊÇ BeforeNavigate2 ºÍDocumentComplete Ã¿´Îä¯ÀÀ¶¼»á±»¼¤·¢.
 
-Figure 7-5. The sequence of events fired by the WebBrowser control during a typical navigation.
+Figure 7-5. The sequence of events fired by the WebBrowser control during a typical navigation.                                                                                 

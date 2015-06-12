@@ -173,7 +173,7 @@ Begin VB.Form Frm_Main
       AutoSize        =   -1  'True
       Caption         =   "页数"
       Height          =   180
-      Left            =   13350
+      Left            =   13410
       TabIndex        =   9
       Top             =   150
       Width           =   360
@@ -286,6 +286,7 @@ End Function
 
 Private Sub Form_Unload(Cancel As Integer)
     Unload Frm_Download
+    End
 End Sub
 
 Private Sub Label1_Click()
@@ -424,7 +425,7 @@ Private Sub web_DownloadComplete(index As Integer)
             End If
         Case "META"
         '商品展示部分直接获取首图信息
-            If vTag.property = "og:image" And vTag1.property = "og:title" Then
+            If vTag.Property = "og:image" And vTag1.Property = "og:title" Then
                 itemurl = urlreset(vTag.content)
                 itemname = vTag1.content
                 If InStr(1, itemurl, "http") <> 0 And InStr(1, itemurl, "jpg") <> 0 And InStr(1, itemurl, ".com//") = 0 Then

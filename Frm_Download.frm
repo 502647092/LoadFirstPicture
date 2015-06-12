@@ -152,7 +152,7 @@ Public Sub Sleep(n As Long)
 End Sub
 
 Private Sub SName_dblClick()
-    InputBox "", , SName.List(SName.ListIndex)
+    InputBox "您所选择的产品名称如下:", , SName.List(SName.ListIndex)
 End Sub
 
 Private Sub UName_AddItem()
@@ -161,5 +161,5 @@ Private Sub UName_AddItem()
 End Sub
 
 Private Sub UName_dblClick()
-    InputBox "", , UName.List(UName.ListIndex)
+    InputBox "您所选择的产品链接如下:", , UName.List(UName.ListIndex)
 End Sub
