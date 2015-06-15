@@ -79,10 +79,8 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-'=================================Sleep========================================
-Private Declare Function timeGetTime Lib "winmm.dll" () As Long
-Private Savetime As Double
 Private sd As Boolean
+Private Savetime As Double
 
 Private Sub clear_Click()
     SName.clear
@@ -94,12 +92,13 @@ Private Sub dl_OnFinished(ByVal Result As Boolean)
 End Sub
 
 Private Sub dlc_Click()
+    On Error Resume Next
     Dim i
     Dim folder As String
-    Dim usetime As Double
+    Dim UseTime As Double
     If folder = "" Then folder = InputBox("请输入 日期-首图-公司名称-阿里账号-提单人名称!", , Format(Now, "m.d") & "-首图-公司名称-阿里账号-提单人名称")
     If folder = "" Then folder = Format(Now, "m.d") & "-首图-公司名称-阿里账号-提单人名称"
-    usetime = timeGetTime
+    UseTime = timeGetTime
     For i = 0 To UName.ListCount - 1
 red:
         pb.Change i, "下载中 进度:  " & i & "/" & pb.BarMax
@@ -112,8 +111,8 @@ red:
         If Not sd Then GoTo red
         'Debug.Print Replace(Trim(SName.List(i)), " ", "")
     Next
-    usetime = Format((timeGetTime - usetime) / 1000, "0.00")
-    pb.Change pb.BarMax, "下载完成 共下载" & pb.BarMax & "件产品首图 耗时" & usetime & "秒!", &H80FF80
+    UseTime = Format((timeGetTime - UseTime) / 1000, "0.00")
+    pb.Change pb.BarMax, "下载完成 共下载" & pb.BarMax & "件产品首图 耗时" & UseTime & "秒!", &H80FF80
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
@@ -124,31 +123,24 @@ End Sub
 'itempicurl (ix), App.Path & "\" & folder.Text & "\" & itemname(ix).Text & ".jpg"
 Private Sub Form_Resize()
     On Error Resume Next
-    
+
     SName.Left = 5
     SName.Top = 600
     SName.Height = Me.Height - 600
     SName.Width = Me.Width / 2 - 10
-    
+
     UName.Left = Me.Width / 2 + 10
     UName.Top = 600
     UName.Height = Me.Height - 600
     UName.Width = Me.Width / 2 - 10
-    
+
     dl.Left = dlc.Left + dlc.Width + 10
     dl.Width = Me.Width - dl.Left - 20
     dl.Top = 25
-    
+
     pb.Left = dlc.Left + dlc.Width + 10
     pb.Width = Me.Width - dl.Left - 20
     pb.Top = dl.Top + dl.Height + 50
-End Sub
-
-Public Sub Sleep(n As Long)
-    Savetime = timeGetTime
-    While timeGetTime < Savetime + n
-        DoEvents
-    Wend
 End Sub
 
 Private Sub SName_dblClick()

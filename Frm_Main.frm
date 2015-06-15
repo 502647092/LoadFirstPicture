@@ -10,34 +10,90 @@ Begin VB.Form Frm_Main
    ScaleHeight     =   9390
    ScaleWidth      =   19035
    StartUpPosition =   3  '窗口缺省
-   Begin VB.ListBox lurl 
-      Height          =   5100
-      Left            =   45
+   Begin VB.CommandButton lg 
+      Caption         =   "login"
+      Height          =   270
+      Left            =   12660
+      TabIndex        =   17
+      Top             =   105
+      Width           =   735
+   End
+   Begin VB.Timer getcb 
+      Enabled         =   0   'False
+      Interval        =   100
+      Left            =   8910
+      Top             =   4455
+   End
+   Begin SHDocVwCtl.WebBrowser mm 
+      Height          =   720
+      Left            =   10920
       TabIndex        =   16
-      Top             =   1350
-      Width           =   11670
+      Top             =   1335
+      Visible         =   0   'False
+      Width           =   4530
+      ExtentX         =   7990
+      ExtentY         =   1270
+      ViewMode        =   0
+      Offline         =   0
+      Silent          =   0
+      RegisterAsBrowser=   0
+      RegisterAsDropTarget=   1
+      AutoArrange     =   0   'False
+      NoClientEdge    =   0   'False
+      AlignLeft       =   0   'False
+      NoWebView       =   0   'False
+      HideFileNames   =   0   'False
+      SingleClick     =   0   'False
+      SingleSelection =   0   'False
+      NoFolders       =   0   'False
+      Transparent     =   0   'False
+      ViewID          =   "{0057D0E0-3573-11CF-AE69-08002B2E1262}"
+      Location        =   "http:///"
+   End
+   Begin VB.Timer getass 
+      Enabled         =   0   'False
+      Interval        =   1000
+      Left            =   8910
+      Top             =   4455
+   End
+   Begin 导出商品首图.Frm_Tols Frm 
+      Height          =   240
+      Left            =   9390
+      Top             =   4575
+      Visible         =   0   'False
+      Width           =   240
+      _ExtentX        =   423
+      _ExtentY        =   423
+   End
+   Begin VB.CommandButton loginassist 
+      Caption         =   "商机助理"
+      Height          =   300
+      Left            =   13455
+      TabIndex        =   15
+      Top             =   90
+      Width           =   930
    End
    Begin VB.CommandButton pic 
       Caption         =   "图片"
       Height          =   300
-      Left            =   11400
-      TabIndex        =   15
+      Left            =   10905
+      TabIndex        =   14
       Top             =   90
       Width           =   600
    End
    Begin VB.CommandButton manager 
       Caption         =   "商品"
       Height          =   300
-      Left            =   10500
-      TabIndex        =   14
+      Left            =   10170
+      TabIndex        =   13
       Top             =   90
       Width           =   600
    End
    Begin VB.CommandButton alibaba 
       Caption         =   "1688"
       Height          =   300
-      Left            =   9600
-      TabIndex        =   13
+      Left            =   9435
+      TabIndex        =   12
       Top             =   90
       Width           =   600
    End
@@ -45,15 +101,15 @@ Begin VB.Form Frm_Main
       Caption         =   "OA"
       Height          =   300
       Left            =   8700
-      TabIndex        =   12
+      TabIndex        =   11
       Top             =   90
       Width           =   600
    End
    Begin VB.CommandButton lookitem 
       Caption         =   "查看商品"
       Height          =   300
-      Left            =   12300
-      TabIndex        =   11
+      Left            =   11640
+      TabIndex        =   10
       Top             =   90
       Width           =   945
    End
@@ -61,7 +117,7 @@ Begin VB.Form Frm_Main
       Height          =   915
       Index           =   2
       Left            =   9750
-      TabIndex        =   10
+      TabIndex        =   9
       Top             =   1350
       Width           =   1155
       ExtentX         =   2037
@@ -108,13 +164,6 @@ Begin VB.Form Frm_Main
       Transparent     =   0   'False
       ViewID          =   "{0057D0E0-3573-11CF-AE69-08002B2E1262}"
       Location        =   "http:///"
-   End
-   Begin VB.ListBox List1 
-      Height          =   7620
-      Left            =   16830
-      TabIndex        =   8
-      Top             =   1695
-      Width           =   1035
    End
    Begin VB.ListBox List2 
       Height          =   780
@@ -180,8 +229,8 @@ Begin VB.Form Frm_Main
       AutoSize        =   -1  'True
       Caption         =   "页数"
       Height          =   180
-      Left            =   13410
-      TabIndex        =   9
+      Left            =   14550
+      TabIndex        =   8
       Top             =   150
       Width           =   360
    End
@@ -210,36 +259,32 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
+Private Savetime As Double
 Dim strUrl As String
-Dim dWinFolder As New ShellWindows
-Dim WithEvents eventIE As WebBrowser_V1
-Attribute eventIE.VB_VarHelpID = -1
+Dim uid As String
+Dim username As String
+Dim password As String
+Dim showmsg As Boolean
+Dim gsmc As String
 
-Private Sub Form_Load()
-    Dim objIE As Object
-    For Each objIE In dWinFolder
-    lurl.AddItem objIE.FullName
-        If InStr(1, objIE.FullName, "iexplore.exe") <> 0 Then
-            lurl.AddItem objIE.LocationURL
-        End If
-    Next
-End Sub
+Dim assistpid As Long
+Dim assisthWnd As Long
 
 Private Sub alibaba_Click()
     web(0).Navigate2 "http://work.1688.com/home/page/index.htm#nav/home"
 End Sub
+
 '
-'Private Sub Form_Load()
-'    web(0).Navigate2 "http://192.168.0.8:83/"
-'End Sub
+Private Sub Form_Load()
+    web(0).Navigate "http://192.168.0.8:83/"
+End Sub
 
 Private Sub Form_Resize()
     On Error Resume Next
-
     Dim lefthg
     web(0).Top = 900
     lefthg = Me.Height - web(0).Top
-    
+
     web(0).Width = Me.Width - 50
     web(0).Height = lefthg - 250
     web(0).Left = 10
@@ -250,19 +295,6 @@ Private Sub Form_Resize()
         web(i).Height = lefthg / 2
         web(i).Left = 10
     Next
-'    web(1).Width = Me.Width / 3 * 2 - 50
-'    web(1).Top = web(0).Top + lefthg / 2
-'    web(1).Height = lefthg / 2
-'    web(1).Left = 10
-'
-'    web(2).Width = Me.Width / 3 * 2 - 50
-'    web(2).Top = web(0).Top + lefthg / 2
-'    web(2).Height = lefthg / 2
-'    web(2).Left = 10
-
-    List1.Left = Me.Width - List1.Width - 350
-    List1.Height = lefthg - 350
-    List1.Top = web(0).Top
 End Sub
 
 Private Sub getfp(webb As WebBrowser)
@@ -276,9 +308,9 @@ Private Sub getfp(webb As WebBrowser)
     ERR.clear
     itemurl = vDoc.getelementsbytagname("input")("pictureUrl").Value
     If ERR <> 0 Then
-        itempicurl = vDoc.getelementsbytagname("input")("pictureUrl")(0).Value
+        itemurl = vDoc.getelementsbytagname("input")("pictureUrl")(0).Value
     End If
-    
+
     If InStr(1, itemurl, "http") <> 0 And InStr(1, itemurl, "jpg") <> 0 And InStr(1, itemurl, ".com//") = 0 Then
         If Frm_Download.UName.AddItemNotSame(itemurl) Then
             If Not (Frm_Download.SName.AddItemNotSame(resetfilename(Trim(itemname) & ".jpg"))) Then
@@ -290,6 +322,7 @@ Private Sub getfp(webb As WebBrowser)
 End Sub
 
 Private Function resetfilename(ByVal name As String) As String
+    On Error Resume Next
     name = clear(name, "/")
     name = clear(name, "\")
     name = clear(name, "*")
@@ -309,6 +342,42 @@ Private Sub Form_Unload(Cancel As Integer)
     End
 End Sub
 
+Private Sub getass_Timer()
+    On Error Resume Next
+    Dim Cname As String
+    assisthWnd = Frm.GethWndByClass("#32770")
+    '"阿里巴巴商机助理登录"
+    If assisthWnd <> 0 Then
+        Debug.Print hWnd
+        Cname = Frm.GetTitle(assisthWnd)
+        Debug.Print Cname
+        Frm.SetFedWnd assisthWnd
+        assistpid = Frm.GetPidByhWnd(assisthWnd)
+        getass.Enabled = False
+        getcb.Enabled = True
+    End If
+End Sub
+
+Private Sub getcb_Timer()
+    On Error Resume Next
+    Dim hWnd As Long
+    Dim mcname As String
+    hWnd = Frm.GetMouseWindowhWnd
+    If Frm.GetPidByhWnd(hWnd) = assistpid Then
+        mcname = Frm.GetClassName(hWnd)
+        If mcname = "ComboBox" Then
+            Frm.SetFedWnd hWnd
+            Debug.Print "已获取到句柄" & hWnd
+            Frm.hWndKeyPress hWnd, vbKeyLButton, System
+            Frm.hWndKeyPress assisthWnd, vbKeyTab, System
+            SendKeys "123"
+            Frm.hWndKeyPress assisthWnd, vbKeyTab, System
+            SendKeys "123"
+            getcb.Enabled = False
+        End If
+    End If
+End Sub
+
 Private Sub Label1_Click()
     web(0).Visible = Not web(0).Visible
     showweb (0)
@@ -321,7 +390,6 @@ Private Sub Label2_Click()
     Set vDoc = web(0).Document
     On Error Resume Next
     For i = 0 To vDoc.All.length - 1
-        List1.AddItem vDoc.All(i).TagName
         Set vTag_2 = vDoc.All(i - 2)
         Set vTag_1 = vDoc.All(i - 1)
         Set vTag = vDoc.All(i)
@@ -348,6 +416,32 @@ Private Sub Label5_Click()
     Next
 End Sub
 
+Private Sub lg_Click()
+    getass.Enabled = True
+End Sub
+
+Private Sub loginassist_Click()
+    On Error Resume Next
+    Dim jj
+    'If InStr(1, mm.LocationURL, "alilogin.aspx") Then
+    If uid <> "" And username <> "" Then
+        mm.Navigate "http://192.168.0.8:83/"
+        pages.Caption = "获取密码中..."
+        jj = MsgBox("公司名称: " & gsmc & vbCrLf & vbCrLf & "当前用户UID: " & uid & vbCrLf & "当前用户名称: " & username & vbCrLf _
+                  & "当前用户密码: ********" & vbCrLf & vbCrLf & "是否继续登录?", vbExclamation + vbYesNo)
+        If jj = vbYes Then
+            Do Until Not mm.Busy
+                Sleep 10
+            Loop
+            mm.Navigate "javascript:document.getElementById('sixiAX').GetPW('" + uid + "','192.168.0.8:83')"
+            Dim password
+            showmsg = True
+        End If
+    Else
+        MsgBox "请先打开一次阿里助手!"
+    End If
+End Sub
+
 Private Sub lookitem_Click()
     Frm_Download.Show
 End Sub
@@ -355,6 +449,19 @@ End Sub
 Private Sub manager_Click()
     web(0).Navigate2 "http://offer.1688.com/offer/manage.htm?show_type=valid&tracelog=work_1_m_orderManage"
 End Sub
+
+Private Sub mm_DocumentComplete(ByVal pDisp As Object, url As Variant)
+    On Error Resume Next
+    If showmsg Then
+        password = mm.Document.body.innerhtml
+        Clipboard.clear
+        Clipboard.SetText password
+        MsgBox "密码获取成功,请在1分钟打开商机助理,将会自动登录!", vbInformation, "商机助理登录"
+        getass.Enabled = True
+    End If
+    showmsg = False
+End Sub
+
 'http://picman.1688.com/album/album_list.htm?tracelog=work_1_m_albumManage
 'http://offer.1688.com/offer/manage.htm?show_type=valid&tracelog=work_1_m_orderManage
 'http://login.1688.com/member/signout.htm
@@ -396,6 +503,7 @@ End Sub
 'End Sub
 
 Private Sub web_DownloadComplete(index As Integer)
+    'On Error Resume Next
     Dim target, Title, Class
     Dim itemurl As String
     Dim itemname As String
@@ -405,14 +513,15 @@ Private Sub web_DownloadComplete(index As Integer)
     urlT(index).ForeColor = vbBlue
     Me.Caption = "Load Complete"
     showweb (index)
-    List1.clear
-    List2.clear
     Dim vDoc, vTag_2, vTag_1, vTag, vTag1, vTag2, vTXT
     Dim i As Integer
     Set vDoc = web(index).Document
     'On Error Resume Next
-    For i = 0 To vDoc.All.length - 1
-        List1.AddItem vDoc.All(i).TagName
+    If InStr(1, web(index).LocationURL, "alilogin.aspx") Then
+        uid = Mid(web(index).LocationURL, InStr(1, web(index).LocationURL, "?id=") + 4)
+        username = vDoc.getelementsbytagname("input")("TPL_username").Value
+    End If
+    For i = 2 To vDoc.All.length - 1
         On Error Resume Next
         Set vTag_2 = vDoc.All(i - 2)
         Set vTag_1 = vDoc.All(i - 1)
@@ -422,7 +531,8 @@ Private Sub web_DownloadComplete(index As Integer)
         Select Case UCase(vDoc.All(i).TagName)
         Case "TD"
         Case "A"
-        '商品列表批量获取信息
+            '商品列表批量获取信息
+            If vTag.Title = "查看公司详细信息" Then gsmc = vTag1.innerhtml
             Dim st As Long
             Dim en As Long
             If UCase(vTag_2.TagName) = "INPUT" And _
@@ -434,7 +544,7 @@ Private Sub web_DownloadComplete(index As Integer)
                 en = InStr(st, vTag.innerhtml, "jpg") + 3
                 itemurl = Mid(vTag.innerhtml, st, en - st)
                 itemurl = urlreset(itemurl)
-                'Debug.Print itemurl
+                Debug.Print itemurl
                 If InStr(1, itemurl, "http") <> 0 And InStr(1, itemurl, "jpg") <> 0 And InStr(1, itemurl, ".com//") = 0 Then
                     If Frm_Download.UName.AddItemNotSame(itemurl) Then
                         If Not (Frm_Download.SName.AddItemNotSame(resetfilename(Trim(vTag.Title) & ".jpg"))) Then
@@ -444,7 +554,7 @@ Private Sub web_DownloadComplete(index As Integer)
                 End If
             End If
         Case "META"
-        '商品展示部分直接获取首图信息
+            '商品展示部分直接获取首图信息
             If vTag.Property = "og:image" And vTag1.Property = "og:title" Then
                 itemurl = urlreset(vTag.content)
                 itemname = vTag1.content
@@ -456,44 +566,6 @@ Private Sub web_DownloadComplete(index As Integer)
                     End If
                 End If
             End If
-
-            '               <meta property="og:image" content="http://i00.c.aliimg.com/img/ibank/2015/897/991/2210199798_196219354.310x310.jpg"/>
-            '<meta property="og:title" content="12支铅笔塑料盒 20*22CM环保吸塑包装 多规格pvc吸塑泡壳加工"/>
-
-            '            '            If UCase(vTag_2.TagName) = "DIV" And _
-                         '                         '               UCase(vTag_1.TagName) = "DIV" And _
-                         '                         '               UCase(vTag1.TagName) = "SPAN" And _
-                         '                         '               UCase(vTag2.TagName) = "UL" Then
-            '            '                If vTag.class = "btn-edit" And vTag.target = "_blank" And vTag.title = "修改" Then List2.AddItem vTag.href
-            '            '            End If
-            '        Case "B"
-            '            'A SPAN　B  B B
-            '
-            '            '            If UCase(vTag_2.TagName) = "A" And _
-                         '                         '               UCase(vTag_1.TagName) = "SPAN" And _
-                         '                         '               UCase(vTag1.TagName) = "B" And _
-                         '                         '               UCase(vTag2.TagName) = "B" Then
-            '            '                Me.Caption = "当前的任务有" & vTag.innerhtml & "个!"
-            '            '            End If
-            '
-            '            'http://192.168.0.8:83/app1/TaskLadingCn/List.aspx?k=&RearchType=0&UId=0&KfId=4986&MgId=0&mgbm=0&bumen=0&followup=&FState=0&tdtype=-1&FSpeed=0&FMgSpeed=0&FKfSpeed=1&attr=0&AttrBus=0&selDate=0&strDate=&endDate=
-            '            'TD A  IMG  TD P
-            '        Case "IMG"
-            '            If UCase(vTag_2.TagName) = "TD" And _
-                         '               UCase(vTag_1.TagName) = "A" And _
-                         '               UCase(vTag1.TagName) = "TD" And _
-                         '               UCase(vTag2.TagName) = "p" Then
-            '                'List2.AddItem vTag_1.innerhtml
-            '                Debug.Print vTag_1.innerhtml
-            '                Debug.Print vTag.src
-            '            End If
-            '        Case "EM"
-            '            If UCase(vTag_2.TagName) = "A" And _
-                         '               UCase(vTag_1.TagName) = "LI" And _
-                         '               UCase(vTag1.TagName) = "INPUT" And _
-                         '               UCase(vTag2.TagName) = "LI" Then
-            '                pages = vTag.innerhtml
-            '            End If
         End Select
     Next
 End Sub
@@ -502,14 +574,14 @@ Private Sub web_NewWindow2(index As Integer, ppDisp As Object, Cancel As Boolean
     On Error Resume Next
     Dim i
     For i = 1 To web.UBound
-        If web(i).Tag Then Set ppDisp = web(i).Object: showweb (i): pages = "已加载...": Exit Sub
+        If web(i).Tag Then Set ppDisp = web(i).object: showweb (i): pages = "已加载...": Exit Sub
     Next
     pages = "未加载..."
     Cancel = True
 End Sub
 
 Public Function urlreset(ByVal url As String) As String
-Dim st, en
+    Dim st, en
     'Debug.Print url
     st = InStr(1, url, "http://") + Len("http://")
     st = InStr(st + 1, url, "/") + Len("/")
