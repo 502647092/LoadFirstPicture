@@ -10,52 +10,6 @@ Begin VB.Form Frm_Main
    ScaleHeight     =   9390
    ScaleWidth      =   19035
    StartUpPosition =   3  '窗口缺省
-   Begin VB.CommandButton lg 
-      Caption         =   "login"
-      Height          =   270
-      Left            =   12660
-      TabIndex        =   17
-      Top             =   105
-      Width           =   735
-   End
-   Begin VB.Timer getcb 
-      Enabled         =   0   'False
-      Interval        =   100
-      Left            =   8910
-      Top             =   4455
-   End
-   Begin SHDocVwCtl.WebBrowser mm 
-      Height          =   720
-      Left            =   10920
-      TabIndex        =   16
-      Top             =   1335
-      Visible         =   0   'False
-      Width           =   4530
-      ExtentX         =   7990
-      ExtentY         =   1270
-      ViewMode        =   0
-      Offline         =   0
-      Silent          =   0
-      RegisterAsBrowser=   0
-      RegisterAsDropTarget=   1
-      AutoArrange     =   0   'False
-      NoClientEdge    =   0   'False
-      AlignLeft       =   0   'False
-      NoWebView       =   0   'False
-      HideFileNames   =   0   'False
-      SingleClick     =   0   'False
-      SingleSelection =   0   'False
-      NoFolders       =   0   'False
-      Transparent     =   0   'False
-      ViewID          =   "{0057D0E0-3573-11CF-AE69-08002B2E1262}"
-      Location        =   "http:///"
-   End
-   Begin VB.Timer getass 
-      Enabled         =   0   'False
-      Interval        =   1000
-      Left            =   8910
-      Top             =   4455
-   End
    Begin 导出商品首图.Frm_Tols Frm 
       Height          =   240
       Left            =   9390
@@ -64,14 +18,6 @@ Begin VB.Form Frm_Main
       Width           =   240
       _ExtentX        =   423
       _ExtentY        =   423
-   End
-   Begin VB.CommandButton loginassist 
-      Caption         =   "商机助理"
-      Height          =   300
-      Left            =   13455
-      TabIndex        =   15
-      Top             =   90
-      Width           =   930
    End
    Begin VB.CommandButton pic 
       Caption         =   "图片"
@@ -229,7 +175,7 @@ Begin VB.Form Frm_Main
       AutoSize        =   -1  'True
       Caption         =   "页数"
       Height          =   180
-      Left            =   14550
+      Left            =   12720
       TabIndex        =   8
       Top             =   150
       Width           =   360
@@ -323,18 +269,18 @@ End Sub
 
 Private Function resetfilename(ByVal name As String) As String
     On Error Resume Next
-    name = clear(name, "/")
-    name = clear(name, "\")
-    name = clear(name, "*")
-    name = clear(name, "?")
-    name = clear(name, "<")
-    name = clear(name, ">")
-    name = clear(name, ":")
+    name = pclear(name, "/")
+    name = pclear(name, "\")
+    name = pclear(name, "*")
+    name = pclear(name, "?")
+    name = pclear(name, "<")
+    name = pclear(name, ">")
+    name = pclear(name, ":")
     resetfilename = name
 End Function
 
-Private Function clear(name As String, P As String) As String
-    clear = Replace(name, P, "")
+Private Function pclear(name As String, P As String) As String
+    pclear = Replace(name, P, "")
 End Function
 
 Private Sub Form_Unload(Cancel As Integer)
@@ -342,69 +288,9 @@ Private Sub Form_Unload(Cancel As Integer)
     End
 End Sub
 
-Private Sub getass_Timer()
-    On Error Resume Next
-    Dim Cname As String
-    assisthWnd = Frm.GethWndByClass("#32770")
-    '"阿里巴巴商机助理登录"
-    If assisthWnd <> 0 Then
-        Debug.Print hWnd
-        Cname = Frm.GetTitle(assisthWnd)
-        Debug.Print Cname
-        Frm.SetFedWnd assisthWnd
-        assistpid = Frm.GetPidByhWnd(assisthWnd)
-        getass.Enabled = False
-        getcb.Enabled = True
-    End If
-End Sub
-
-Private Sub getcb_Timer()
-    On Error Resume Next
-    Dim hWnd As Long
-    Dim mcname As String
-    hWnd = Frm.GetMouseWindowhWnd
-    If Frm.GetPidByhWnd(hWnd) = assistpid Then
-        mcname = Frm.GetClassName(hWnd)
-        If mcname = "ComboBox" Then
-            Frm.SetFedWnd hWnd
-            Debug.Print "已获取到句柄" & hWnd
-            Frm.hWndKeyPress hWnd, vbKeyLButton, System
-            Frm.hWndKeyPress assisthWnd, vbKeyTab, System
-            SendKeys "123"
-            Frm.hWndKeyPress assisthWnd, vbKeyTab, System
-            SendKeys "123"
-            getcb.Enabled = False
-        End If
-    End If
-End Sub
-
 Private Sub Label1_Click()
     web(0).Visible = Not web(0).Visible
     showweb (0)
-End Sub
-
-Private Sub Label2_Click()
-'A A   A   DIV DIV
-    Dim vDoc, vTag_2, vTag_1, vTag, vTag1, vTag2, vTXT
-    Dim i As Integer
-    Set vDoc = web(0).Document
-    On Error Resume Next
-    For i = 0 To vDoc.All.length - 1
-        Set vTag_2 = vDoc.All(i - 2)
-        Set vTag_1 = vDoc.All(i - 1)
-        Set vTag = vDoc.All(i)
-        Set vTag1 = vDoc.All(i + 1)
-        Set vTag2 = vDoc.All(i + 2)
-        Select Case UCase(vDoc.All(i).TagName)
-        Case "A"
-            If UCase(vTag_2.TagName) = "A" And _
-               UCase(vTag_1.TagName) = "A" And _
-               UCase(vTag1.TagName) = "DIV" And _
-               UCase(vTag2.TagName) = "DIV" Then
-                If vTag.Class = "next" Then vTag.Click
-            End If
-        End Select
-    Next
 End Sub
 
 Private Sub Label5_Click()
@@ -416,50 +302,12 @@ Private Sub Label5_Click()
     Next
 End Sub
 
-Private Sub lg_Click()
-    getass.Enabled = True
-End Sub
-
-Private Sub loginassist_Click()
-    On Error Resume Next
-    Dim jj
-    'If InStr(1, mm.LocationURL, "alilogin.aspx") Then
-    If uid <> "" And username <> "" Then
-        mm.Navigate "http://192.168.0.8:83/"
-        pages.Caption = "获取密码中..."
-        jj = MsgBox("公司名称: " & gsmc & vbCrLf & vbCrLf & "当前用户UID: " & uid & vbCrLf & "当前用户名称: " & username & vbCrLf _
-                  & "当前用户密码: ********" & vbCrLf & vbCrLf & "是否继续登录?", vbExclamation + vbYesNo)
-        If jj = vbYes Then
-            Do Until Not mm.Busy
-                Sleep 10
-            Loop
-            mm.Navigate "javascript:document.getElementById('sixiAX').GetPW('" + uid + "','192.168.0.8:83')"
-            Dim password
-            showmsg = True
-        End If
-    Else
-        MsgBox "请先打开一次阿里助手!"
-    End If
-End Sub
-
 Private Sub lookitem_Click()
     Frm_Download.Show
 End Sub
 
 Private Sub manager_Click()
     web(0).Navigate2 "http://offer.1688.com/offer/manage.htm?show_type=valid&tracelog=work_1_m_orderManage"
-End Sub
-
-Private Sub mm_DocumentComplete(ByVal pDisp As Object, url As Variant)
-    On Error Resume Next
-    If showmsg Then
-        password = mm.Document.body.innerhtml
-        Clipboard.clear
-        Clipboard.SetText password
-        MsgBox "密码获取成功,请在1分钟打开商机助理,将会自动登录!", vbInformation, "商机助理登录"
-        getass.Enabled = True
-    End If
-    showmsg = False
 End Sub
 
 'http://picman.1688.com/album/album_list.htm?tracelog=work_1_m_albumManage
@@ -503,7 +351,7 @@ End Sub
 'End Sub
 
 Private Sub web_DownloadComplete(index As Integer)
-    'On Error Resume Next
+'On Error Resume Next
     Dim target, Title, Class
     Dim itemurl As String
     Dim itemname As String
@@ -521,7 +369,11 @@ Private Sub web_DownloadComplete(index As Integer)
         uid = Mid(web(index).LocationURL, InStr(1, web(index).LocationURL, "?id=") + 4)
         username = vDoc.getelementsbytagname("input")("TPL_username").Value
     End If
-    For i = 2 To vDoc.All.length - 1
+    On Error Resume Next
+    Dim alll As Long
+    alll = vDoc.All.length
+    On Error GoTo 0
+    For i = 2 To alll - 1
         On Error Resume Next
         Set vTag_2 = vDoc.All(i - 2)
         Set vTag_1 = vDoc.All(i - 1)
