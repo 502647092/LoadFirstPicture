@@ -83,7 +83,7 @@ Begin VB.Form Frm_Main
       NoFolders       =   0   'False
       Transparent     =   0   'False
       ViewID          =   "{0057D0E0-3573-11CF-AE69-08002B2E1262}"
-      Location        =   "http:///"
+      Location        =   ""
    End
    Begin SHDocVwCtl.WebBrowser web 
       Height          =   915
@@ -109,7 +109,7 @@ Begin VB.Form Frm_Main
       NoFolders       =   0   'False
       Transparent     =   0   'False
       ViewID          =   "{0057D0E0-3573-11CF-AE69-08002B2E1262}"
-      Location        =   "http:///"
+      Location        =   ""
    End
    Begin VB.ListBox List2 
       Height          =   780
@@ -169,7 +169,7 @@ Begin VB.Form Frm_Main
       NoFolders       =   0   'False
       Transparent     =   0   'False
       ViewID          =   "{0057D0E0-3573-11CF-AE69-08002B2E1262}"
-      Location        =   "http:///"
+      Location        =   ""
    End
    Begin VB.Label pages 
       AutoSize        =   -1  'True
@@ -351,7 +351,7 @@ End Sub
 'End Sub
 
 Private Sub web_DownloadComplete(index As Integer)
-'On Error Resume Next
+    On Error Resume Next
     Dim target, Title, Class
     Dim itemurl As String
     Dim itemname As String
@@ -369,10 +369,10 @@ Private Sub web_DownloadComplete(index As Integer)
         uid = Mid(web(index).LocationURL, InStr(1, web(index).LocationURL, "?id=") + 4)
         username = vDoc.getelementsbytagname("input")("TPL_username").Value
     End If
-    On Error Resume Next
+    'On Error Resume Next
     Dim alll As Long
     alll = vDoc.All.length
-    On Error GoTo 0
+    'On Error GoTo 0
     For i = 2 To alll - 1
         On Error Resume Next
         Set vTag_2 = vDoc.All(i - 2)
